@@ -14,23 +14,37 @@ function selectMenu() {
 }
 
 export default function Header() {
-  const { language, setLanguage } = useContext(UserContext);
+  const { language } = useContext(UserContext);
   const pathName = useLocation().pathname;
 
   return (
     <div className="topnav" id="myTopnav">
-      <nav>
+      {language === "en" && <nav>
           <Link to="/" 
             className={pathName === "/home" || pathName === "/" ? "active" : "not-active"}>Home</Link>
           <Link to="/inside_house" 
             className={pathName === "/inside_house" ? "active" : "not-active"}>House</Link>
           <Link to="/booking"
             className={pathName === "/booking" ? "active" : "not-active"}>Bookings</Link>
-          <LanguageButton buttonLanguage={language === "fr" ? "en" : "fr"}/>
+          <LanguageButton buttonLanguage={"fr"}/>
+          {/* eslint-disable-next-line */}
           <a href="#" className="icon" onClick={selectMenu}>
             <i className="fa fa-bars"></i>
           </a>
-      </nav>
+      </nav>}
+      {language === "fr" && <nav>
+          <Link to="/fr" 
+            className={pathName === "/fr" || pathName === "/" ? "active" : "not-active"}>Accueil</Link>
+          <Link to="/inside_house-fr" 
+            className={pathName === "/inside_house-fr" ? "active" : "not-active"}>Maison</Link>
+          <Link to="/booking-fr"
+            className={pathName === "/booking-fr" ? "active" : "not-active"}>Réservations</Link>
+          <LanguageButton buttonLanguage={"en"}/>
+          {/* eslint-disable-next-line */}
+          <a href="#" className="icon" onClick={selectMenu}>
+            <i className="fa fa-bars"></i>
+          </a>
+      </nav>}
     </div>
   );
 }
