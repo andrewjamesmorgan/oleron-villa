@@ -1,10 +1,35 @@
-import { useContext } from 'react';
-import { UserContext } from '../App';
+import { useState } from 'react';
+import HomeIntro from '../components/home/HomeIntro';
+import ImageModal from '../components/ImageModal';
+import HomeGrid from '../components/HomeGrid';
 
 export default function Home() {
-  const { language } = useContext(UserContext);
-   
+  const [modalSrc, setModalSrc] = useState(null);
+  const [setModalAlt] = useState(null);
+
+  function imageClicked(src, alt) {
+    setModalSrc(src);
+    setModalAlt(alt);
+  }
+
+  function dismisModal() {
+    setModalSrc(null);
+    setModalAlt(null);
+  }
+  
   return (
-    <h1>{language === "fr" ? "Maison" : "Home"}</h1>
+    <div className='space-above'>
+      <HomeIntro />
+      { modalSrc && 
+        <ImageModal
+          onClose={dismisModal}
+          imageSrc={modalSrc}
+          altText="Oleron Garden"
+        />
+      }
+      <HomeGrid
+        action={imageClicked}
+      />
+    </div>
   );
 }

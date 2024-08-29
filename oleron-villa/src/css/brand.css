@@ -1,10 +1,14 @@
 :root {
     --dark: #001e2b;
+    --dark-translucent: rgba(00,30,43,0.8);
     --light-highlight: #00ed64;
     --dark-highlight: #00684a;
+    --dark-highlight-translucent: rgba(00,104,74,0.5);
     --light-one: #e3fcf7;
     --light-two: #f9ebff;
     --white: #ffffff;
+    --dark-accent: #bbbbbb;
+    --light-accent: #eeeeee;
 }
 
 @font-face {
