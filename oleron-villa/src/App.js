@@ -10,6 +10,8 @@ import InsideHouse from './pages/InsideHouse';
 import InsideHouseFR from './pages/InsideHouseFR';
 import Booking from './pages/Booking';
 import BookingFR from './pages/BookingFR';
+import Contact from './pages/Contact';
+import ContactFR from './pages/ContactFR';
 
 export const UserContext = createContext(null);
 
@@ -36,6 +38,8 @@ function App() {
             <Route path="fr" element={<HomeFR />} />
             <Route path="booking" element={<Booking />} />
             <Route path="booking-fr" element={<BookingFR />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="contact-fr" element={<ContactFR />} />
             <Route path="inside_house" element={<InsideHouse />} />
             <Route path="inside_house-fr" element={<InsideHouseFR />} />
               {/* <Route path="*" element={<NoPage />} /> */}

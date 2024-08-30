@@ -26,6 +26,8 @@ export default function Header() {
             className={pathName === "/inside_house" ? "active" : "not-active"}>House</Link>
           <Link to="/booking"
             className={pathName === "/booking" ? "active" : "not-active"}>Bookings</Link>
+          <Link to="/contact"
+            className={pathName === "/contact" ? "active" : "not-active"}>Contact us</Link>
           <LanguageButton buttonLanguage={"fr"}/>
           {/* eslint-disable-next-line */}
           <a href="#" className="icon" onClick={selectMenu}>
@@ -39,6 +41,8 @@ export default function Header() {
             className={pathName === "/inside_house-fr" ? "active" : "not-active"}>Maison</Link>
           <Link to="/booking-fr"
             className={pathName === "/booking-fr" ? "active" : "not-active"}>Réservations</Link>
+          <Link to="/contact-fr"
+            className={pathName === "/contact-fr" ? "active" : "not-active"}>Nous contacter</Link>
           <LanguageButton buttonLanguage={"en"}/>
           {/* eslint-disable-next-line */}
           <a href="#" className="icon" onClick={selectMenu}>

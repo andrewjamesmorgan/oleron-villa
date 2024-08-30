@@ -25,6 +25,9 @@ export default function LanguageButton({buttonLanguage}) {
         case "/inside_house":
           newPathName = "/inside_house-fr";
           break;
+        case "/contact":
+          newPathName = "/contact-fr";
+          break;
         default:
           console.warn(`Missing route option for ${buttonLanguage} version of route ${pathName}.`);
       }
@@ -38,6 +41,9 @@ export default function LanguageButton({buttonLanguage}) {
           break;
         case "/inside_house-fr":
           newPathName = "/inside_house";
+          break;
+          case "/contact-fr":
+        newPathName = "/contact";
           break;
         default:
           console.warn(`Missing route option for ${buttonLanguage} version of route ${pathName}.`);

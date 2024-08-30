@@ -12,9 +12,7 @@ export default function InfoBox({imageSrc, alt, action, route, body}) {
     console.log(`Routing to ${route}`);
     navigate(route);
   }
-
-  console.log(`From InfoBox... imageSrc: ${imageSrc}; alt: ${alt}; body: ${body}`);
-
+  
   return (
     <>
       <div className='info-box'>
