@@ -40,6 +40,23 @@
   margin-right: 50px;
 }
 
+.responsive-grid {
+  margin-left: 50px;
+  margin-right: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; 
+  gap: 20px; 
+}
+
+.responsive-grid > * {
+  flex: 1;
+  min-width: 300px;
+  box-sizing: border-box;
+}
+
 div.croppedImage {
   width: 290px;
   height: 203px;
@@ -107,6 +124,9 @@ img.croppedImage:hover {
 div.info-box {
   width: 290px;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 div.info-text {
@@ -126,6 +146,9 @@ div.space-above {
   .responsive-text {
     margin-left: 10px;
     margin-right: 10px;
+  }
+  div.space-above {
+    margin-top: 70px;
   }
 }
 
