@@ -1,12 +1,11 @@
-import React from "react";
 import FrenchPage from '../components/lifecycle/FrenchPage';
 import HomeContent from '../components/home/HomeContent';
-import HomeFRHead from "../components/home/HomeFRHead";
+import HomeHeadFR from "../components/home/HomeHeadFR";
 
 export default function HomeFR() {
   return (
     <>
-      <HomeFRHead />
+      <HomeHeadFR />
       <FrenchPage />
       <HomeContent />
     </>

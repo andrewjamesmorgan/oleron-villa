@@ -1,10 +1,11 @@
-import { useContext } from 'react';
-import { UserContext } from '../App';
+import ContactContent from '../components/contact/ContactContent';
+import ContactHead from "../components/contact/ContactHead";
 
 export default function Contact() {
-  const { language } = useContext(UserContext);
-
   return (
-    <h1>{language === "fr" ? "Contactez" : "Contact"}</h1>
+    <>
+      <ContactHead />
+      <ContactContent />
+    </>
   );
 }

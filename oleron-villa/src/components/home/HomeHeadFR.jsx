@@ -1,7 +1,7 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
-export default function HomeFRHead() {
+export default function HomeHeadFR() {
   return (
     <>
       <Helmet>
