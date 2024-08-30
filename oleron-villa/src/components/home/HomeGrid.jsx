@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { UserContext } from '../App';
-import InfoBox from './InfoBox';
+import { UserContext } from '../../App';
+import InfoBox from '../InfoBox';
 
 export default function HomeGrid({action}) {
   const { language } = useContext(UserContext);

@@ -1,6 +1,6 @@
 import React from "react";
 import FrenchPage from '../components/lifecycle/FrenchPage';
-import Home from './Home';
+import HomeContent from '../components/home/HomeContent';
 import HomeFRHead from "../components/home/HomeFRHead";
 
 export default function HomeFR() {
@@ -8,7 +8,7 @@ export default function HomeFR() {
     <>
       <HomeFRHead />
       <FrenchPage />
-      <Home />
+      <HomeContent />
     </>
   );
 }
