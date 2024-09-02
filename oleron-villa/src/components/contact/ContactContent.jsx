@@ -1,5 +1,5 @@
-// import { useState } from 'react';
 import ContactIntro from './ContactIntro';
+import ContactForm from './ContactForm';
 
 export default function Home() {
   // const [modalSrc, setModalSrc] = useState(null);
@@ -7,6 +7,8 @@ export default function Home() {
   return (
     <div className='space-above'>
       <ContactIntro />
+      <ContactForm />
     </div>
   );
 }
+

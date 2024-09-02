@@ -6,8 +6,7 @@ export default function FrenchPage() {
 
   useEffect(() => {
     setLanguage('fr');
-  }, [setLanguage]); // This ensures the effect runs only when the component is
-                     // mounted
+  }, [setLanguage]);
   return (
     <></>
   );
