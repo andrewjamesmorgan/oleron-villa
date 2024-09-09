@@ -37,44 +37,30 @@
 
 .banner-image-text {
   position: relative;
+  margin-bottom: 20px;
 }
 
 .banner-image-text h1 {
   position: absolute;
-  top: 15px;
+  top: 0.8vw;
+  /* top: 15px; */
   left: 50%;
   transform: translateX(-50%); 
-  color: white; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-  font-size: 5rem;
+  color: var(--white); 
+  text-shadow: 4px 4px 8px black; 
+  /* font-size: 5rem; */
+  font-size: 8vw;
   z-index: 1;
-  transition: all 0.3s ease; 
-}
-
-@media only screen and (max-width: 920px) {
-  .banner-image-text h1 {
-    top: 5;
-    font-size: 4em;
-  }
-}
-
-@media only screen and (max-width: 740px) {
-  .banner-image-text h1 {
-    top: 5;
-    font-size: 2.5em;
-  }
-}
-
-@media only screen and (max-width: 620px) {
-  .banner-image-text h1 {
-    top: 3;
-    font-size: 2em;
-  }
+  /* transition: all 0.3s ease;  */
 }
 
 .responsive-text {
   margin-left: 50px;
   margin-right: 50px;
+}
+
+h2 {
+  margin-bottom: 20px;
 }
 
 .responsive-grid {
@@ -177,7 +163,7 @@ div.info-text:hover {
 }
 
 div.space-above {
-  margin-top: 54px;
+  margin-top: 53px;
 }
 
 div.error-message {
@@ -214,8 +200,8 @@ button.btn-primary-branded {
     margin-left: 10px;
     margin-right: 10px;
   }
-  div.space-above {
+  /* div.space-above {
     margin-top: 70px;
-  }
+  } */
 }
 
