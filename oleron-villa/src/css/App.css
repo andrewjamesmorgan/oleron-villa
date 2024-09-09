@@ -141,6 +141,15 @@ div.space-above {
   margin-top: 70px;
 }
 
+div.error-message {
+  border: 2px solid var(--error-color);
+  background-color: var(--error-background);
+  color: var(--error-color); 
+  padding: 10px; /* Space inside the box */
+  border-radius: 8px; /* Rounded corners */
+  margin-top: 10px; /* Space above the box */
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {

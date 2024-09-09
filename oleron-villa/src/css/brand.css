@@ -9,6 +9,8 @@
     --white: #ffffff;
     --dark-accent: #bbbbbb;
     --light-accent: #eeeeee;
+    --error-background: rgba(139, 0, 0, 0.2);
+    --error-color: darkred; 
     --soft-sand: #F4E1D2;
     --ocean-blue: #009DAE;
     --sunset-orange: #FF7F50;

@@ -1,45 +1,130 @@
-import React, { useContext } from 'react';
-import { useForm, ValidationError } from '@formspree/react';
+import React, { useState, useContext } from 'react';
+import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App';
 import { config } from '../../config';
 
 export default function ContactForm() {
-    const { language } = useContext(UserContext);
-    const [state, handleSubmit] = useForm(config.contactForm);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting, isSubmitSuccessful },
+    reset,
+  } = useForm();
 
-  if (state.succeeded) {
-      return <h3>{language === "fr" ? 
-        "Merci pour votre message, nous vous contacterons dans les plus brefs délais" : 
-        "Thanks for your message, we'll be in touch as soon as possible"}</h3>;
-  }
+  const { language } = useContext(UserContext);
+  const [errorMessage, setErrorMessage] = useState(null);
+
+  const onSubmit = async (data) => {
+    setErrorMessage(null);
+    const formData = new FormData();
+
+    formData.append("access_key", config.formKey);
+
+    Object.entries(data).forEach(([key, value]) => {
+      formData.append(key, value);
+    });
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    console.log(`Submit`);
+    console.log(`language: ${language}`);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      });
+      const result = await res.json();
+      if (res.ok && result.success) {
+        reset(); // Reset the form on success
+      } else {
+        setErrorMessage(`${language === "fr" ? "Échec de l'envoi du message" : "Failed to send message"} : ${result.message}`);
+      }
+    } catch (error) {
+      setErrorMessage(`${language === "fr" ? "Échec de l'envoi du message" : "Failed to send message"} : ${error.message}`);
+    }
+  };
 
   return (
-    <form onSubmit={handleSubmit} id="contact-form" className='form'>
-      <label htmlFor="email">
-        {language === "fr" ? "Adresse Email" : "Email Address"}
-      </label>
-      <input
-        id="email"
-        type="email" 
-        name="email"
-      />
-      <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
-      <textarea
-        id="message"
-        name="message"
-      />
-      <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-      />
-      <button type="submit" disabled={state.submitting}>
-        Submit
-      </button>
-    </form>
+    <div className="container">
+      {isSubmitSuccessful && !errorMessage ? (
+        <h2 className="text-success">Votre message a été envoyé avec succèss!</h2>
+      ) : (
+        <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
+          {/* Email Field */}
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">Email</label>
+            <input
+              id="email"
+              type="email"
+              className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+              {...register('email', {
+                required: `${language === "fr" ? "Veuillez entrer une adresse email" : "Email address required"}`,
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: `${language === "fr" ? "Veuillez entrer une adresse email" : "Email address required"}`,
+                },
+              })}
+            />
+            {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
+          </div>
+
+          {/* Optional Phone Number Field */}
+          <div className="mb-3">
+            <label htmlFor="phone" className="form-label">{language === "fr" ? "Numéro de téléphone (facultatif)" : "Phone number (optional)"}</label>
+            <input
+              id="phone"
+              type="tel"
+              className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
+              {...register('phone', {
+                pattern: {
+                  value: /^\+?[0-9]{7,15}$/,
+                  message: `${language === "fr" ? "Veuillez entrer un numéro de téléphone valide" : "Phone number needs to be in a valid form"}`,
+                },
+              })}
+            />
+            {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}
+          </div>
+
+          {/* Name Field */}
+          <div className="mb-3">
+            <label htmlFor="name" className="form-label">{language === "fr" ? "Nom" : "Name"}</label>
+            <input
+              id="name"
+              type="text"
+              className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+              {...register('name', { required: `${language === "fr" ? "Veuillez entrer votre nom" : "Please enter a name"}` })}
+            />
+            {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
+          </div>
+
+          {/* Message Field */}
+          <div className="mb-3">
+            <label htmlFor="message" className="form-label">Message</label>
+            <textarea
+              id="message"
+              rows={5}
+              className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+              {...register('message', { required: `${language === "fr" ? "Veuillez entrer un message" : "Please enter a message"}`})}
+            />
+            {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
+          </div>
+
+          {/* Submit Button */}
+          <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+            {isSubmitting ? 
+              language === "fr" ? "Envoi en cours..." : "Sending..." :
+              language === "fr" ? "Envoyer" : "Send"
+            }
+          </button>
+          {errorMessage && <div className='error-message'>{errorMessage}</div>}
+        </form>
+      )}
+    </div>
   );
 }
