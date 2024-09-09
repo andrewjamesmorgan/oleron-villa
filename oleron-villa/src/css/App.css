@@ -145,9 +145,28 @@ div.error-message {
   border: 2px solid var(--error-color);
   background-color: var(--error-background);
   color: var(--error-color); 
-  padding: 10px; /* Space inside the box */
-  border-radius: 8px; /* Rounded corners */
-  margin-top: 10px; /* Space above the box */
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px; 
+}
+
+.responsive-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; 
+  gap: 20px;
+}
+
+div.med-field {
+  flex-basis: 400px;
+  /* max-width: 100%; */
+  /* box-sizing: border-box; */
+}
+
+button.btn-primary-branded {
+  background-color: var(--dark-highlight);
+  border: var(--dark-highlight);
 }
 
 @media only screen and (max-width: 620px) {

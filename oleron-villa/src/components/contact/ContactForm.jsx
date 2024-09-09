@@ -56,9 +56,9 @@ export default function ContactForm() {
         <h2 className="text-success">Votre message a été envoyé avec succèss!</h2>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
-          <div className="responsive-grid">
+          <div className="responsive-form">
             {/* Email Field */}
-            <div className="mb-3">
+            <div className="med-field">
               <label htmlFor="email" className="form-label">Email</label>
               <input
                 id="email"
@@ -75,7 +75,7 @@ export default function ContactForm() {
               {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
             </div>
             {/* Optional Phone Number Field */}
-            <div className="mb-3">
+            <div className="mb-3 med-field">
               <label htmlFor="phone" className="form-label">{language === "fr" ? "Numéro de téléphone (facultatif)" : "Phone number (optional)"}</label>
               <input
                 id="phone"
@@ -91,7 +91,7 @@ export default function ContactForm() {
               {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}
             </div>
             {/* Name Field */}
-            <div className="mb-3">
+            <div className="mb-3 med-field">
               <label htmlFor="name" className="form-label">{language === "fr" ? "Nom" : "Name"}</label>
               <input
                 id="name"
@@ -114,7 +114,7 @@ export default function ContactForm() {
             {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
           </div>
           {/* Submit Button */}
-          <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
+          <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
             {isSubmitting ? 
               language === "fr" ? "Envoi en cours..." : "Sending..." :
               language === "fr" ? "Envoyer" : "Send"
