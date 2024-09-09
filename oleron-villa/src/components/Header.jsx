@@ -28,7 +28,7 @@ export default function Header() {
             className={pathName === "/booking" ? "active" : "not-active"}>Bookings</Link>
           <Link to="/contact"
             className={pathName === "/contact" ? "active" : "not-active"}>Contact us</Link>
-          {/* <LanguageButton buttonLanguage={"fr"}/> */}
+          <LanguageButton buttonLanguage={"fr"}/>
           {/* eslint-disable-next-line */}
           <a href="#" className="icon" onClick={selectMenu}>
             <i className="fa fa-bars"></i>
