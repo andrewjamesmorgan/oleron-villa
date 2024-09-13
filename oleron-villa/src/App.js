@@ -42,7 +42,7 @@ function App() {
             <Route path="contact-fr" element={<ContactFR />} />
             <Route path="inside_house" element={<InsideHouse />} />
             <Route path="inside_house-fr" element={<InsideHouseFR />} />
-              {/* <Route path="*" element={<NoPage />} /> */}
+            <Route path="*" element={<Home />} />
             </Route>
           </Routes>
         </BrowserRouter>
