@@ -3,7 +3,7 @@
 
 secrets.js
 
-build/
+# build/
 
 # Logs
 logs
