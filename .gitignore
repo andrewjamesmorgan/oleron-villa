@@ -2,8 +2,8 @@
 .DS_Store
 
 secrets.js
-
-# build/
+.vscode
+build/
 
 # Logs
 logs

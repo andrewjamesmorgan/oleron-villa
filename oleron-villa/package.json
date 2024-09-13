@@ -1,9 +1,10 @@
 {
   "name": "oleron-villa",
-  "version": "0.1.0",
   "homepage": "https://andrewjamesmorgan.github.io/oleron-villa",
-  "private": false,
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -19,10 +20,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build"
+    "deploy": "CI=false gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
