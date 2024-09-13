@@ -1,7 +1,7 @@
 {
   "name": "oleron-villa",
   "version": "0.1.0",
-  "homepage": "https://andrewjamesmorgan.github.io/oleron-villa/",
+  "homepage": "https://andrewjamesmorgan.github.io/oleron-villa",
   "private": false,
   "dependencies": {
     "bootstrap": "^5.3.3",
@@ -18,11 +18,11 @@
     "gh-pages": "^6.1.1"
   },
   "scripts": {
-    "start": "CI=false react-scripts start",
-    "build": "CI=false react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "CI=false gh-pages -d build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
