@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/oleron-villa/static/css/main.dc60295c.css",
-    "main.js": "/oleron-villa/static/js/main.44c43bca.js",
-    "index.html": "/oleron-villa/index.html",
-    "main.dc60295c.css.map": "/oleron-villa/static/css/main.dc60295c.css.map",
-    "main.44c43bca.js.map": "/oleron-villa/static/js/main.44c43bca.js.map"
+    "main.css": "/static/css/main.dc60295c.css",
+    "main.js": "/static/js/main.1fb8c9a5.js",
+    "index.html": "/index.html",
+    "main.dc60295c.css.map": "/static/css/main.dc60295c.css.map",
+    "main.1fb8c9a5.js.map": "/static/js/main.1fb8c9a5.js.map"
   },
   "entrypoints": [
     "static/css/main.dc60295c.css",
-    "static/js/main.44c43bca.js"
+    "static/js/main.1fb8c9a5.js"
   ]
 }

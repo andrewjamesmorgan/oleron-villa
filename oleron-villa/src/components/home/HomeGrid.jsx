@@ -9,7 +9,7 @@ export default function HomeGrid({action}) {
     <>
     <div className='responsive-grid'>
       <InfoBox 
-        imageSrc="/images/outside/Oleron_Garden_TT_1900.jpg"
+        imageSrc="../../images/outside/Oleron_Garden_TT_1900.jpg"
         alt={language === "fr" ? "Un photo" : "A photo"}
         action={action}
         route={language === "fr" ? "/booking-fr" : "/booking"} // TODO: Change route
@@ -19,7 +19,7 @@ export default function HomeGrid({action}) {
         `}
       />
       <InfoBox 
-        imageSrc="/images/outside/Oleron_Garden_TT_1900.jpg"
+        imageSrc="../../images/outside/Oleron_Garden_TT_1900.jpg"
         alt={language === "fr" ? "Un photo" : "A photo"}
         action={action}
         route={language === "fr" ? "/booking-fr" : "/booking"} // TODO: Change route
@@ -29,7 +29,7 @@ export default function HomeGrid({action}) {
         `}
       />
       <InfoBox 
-        imageSrc="/images/outside/Oleron_Garden_TT_1900.jpg"
+        imageSrc="../../images/outside/Oleron_Garden_TT_1900.jpg"
         alt={language === "fr" ? "Un photo" : "A photo"}
         action={action}
         route={language === "fr" ? "/booking-fr" : "/booking"} // TODO: Change route
@@ -41,7 +41,7 @@ export default function HomeGrid({action}) {
     </div>
     <div className='responsive-grid'>
     <InfoBox 
-      imageSrc="/images/outside/Oleron_Garden_TT_1900.jpg"
+      imageSrc="../../images/outside/Oleron_Garden_TT_1900.jpg"
       alt={language === "fr" ? "Un photo" : "A photo"}
       action={action}
       route={language === "fr" ? "/booking-fr" : "/booking"} // TODO: Change route
@@ -51,7 +51,7 @@ export default function HomeGrid({action}) {
       `}
     />
     <InfoBox 
-      imageSrc="/images/outside/Oleron_Garden_TT_1900.jpg"
+      imageSrc="../../images/outside/Oleron_Garden_TT_1900.jpg"
       alt={language === "fr" ? "Un photo" : "A photo"}
       action={action}
       route={language === "fr" ? "/booking-fr" : "/booking"} // TODO: Change route
@@ -61,7 +61,7 @@ export default function HomeGrid({action}) {
       `}
     />
     <InfoBox 
-      imageSrc="/images/outside/Oleron_Garden_TT_1900.jpg"
+      imageSrc="../../images/outside/Oleron_Garden_TT_1900.jpg"
       alt={language === "fr" ? "Un photo" : "A photo"}
       action={action}
       route={language === "fr" ? "/booking-fr" : "/booking"} // TODO: Change route

@@ -9,7 +9,7 @@ export default function HomeIntro() {
       <div id='home-intro' className='banner-image-text'>
         <h1>Oléron Villa</h1>
         <img
-          src="/images/outside/Oleron_Garden_TT_1900.jpg"
+          src="../../images/outside/Oleron_Garden_TT_1900.jpg"
           alt={language === "en" ? "Garden and outdoor dining for Oléron Villa holiday home. Family playing table tennis."
                                 : "Jardin et repas extérieurs pour la maison de vacances Oléron Villa. Famille jouant au ping-pong"}
           className='full-width-image'
