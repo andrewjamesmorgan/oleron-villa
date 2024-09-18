@@ -6,8 +6,9 @@
 }
 
 .combo-button {
+    background-color: var(--light-highlight-translucent);
     float: right;
-    margin-top: 13px;
+    margin-top: 15px;
     margin-bottom: 10px;
     margin-right: 10px;
     border-radius: 5px;
@@ -22,4 +23,21 @@
 .combo-button span {
     display: inline-flex; /* Make span use flexbox */
     align-items: center; /* Vertically align image and text */
+}
+
+span.language-button-text {
+    font-size: smaller;
+}
+
+@media only screen and (max-width: 620px) {
+    span.language-button-text {
+        visibility: hidden;
+    }
+
+    .combo-button {
+        background: none; /* Remove the background */
+        padding: 3px; /* Add 3px padding around the content */
+        border: none; /* Remove border */
+        margin-right: -15px;
+    }
 }

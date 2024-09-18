@@ -61,7 +61,7 @@ export default function LanguageButton({buttonLanguage}) {
           alt={buttonLanguage}
           src={buttonLanguage === "fr" ? fr_flag : en_flag}
         />
-        {` ${buttonLanguage.toUpperCase()}`}
+        <span className="language-button-text">{` ${buttonLanguage.toUpperCase()}`}</span>
       </span>
     </button>
   );
