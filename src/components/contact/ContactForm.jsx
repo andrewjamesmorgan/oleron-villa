@@ -24,7 +24,9 @@ export default function ContactForm() {
       formData.append(key, value);
     });
 
-    const object = Object.fromEntries(formData);
+    let object = Object.fromEntries(formData);
+    object.subject = `Contact from ${object.name ? object.name : "unknown"} for Oléron Vills`;
+    object.redirect = "https://www.oleronvilla.com/";
     const json = JSON.stringify(object);
 
     console.log(`Submit`);
@@ -104,7 +106,7 @@ export default function ContactForm() {
           </div>
           {/* Message Field */}
           <div className="mb-3">
-            <label htmlFor="message" className="form-label">Message</label>
+            <label htmlFor="message" className="form-label">Question</label>
             <textarea
               id="message"
               rows={5}
