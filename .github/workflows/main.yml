@@ -14,5 +14,14 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Check directory1
+      run: ls /home/runner/work/oleron-villa/
+
+    - name: Check directory2
+      run: ls /home/runner/work/oleron-villa/oleron-villa
+
+    - name: Check directory3
+      run: ls /home/runner/work/oleron-villa/oleron-villa/package.json
+
     - name: Build and Deploy React app to GitHub Pages
       uses: omkartapale/react-deployment-gh-pages@v1.0.0
