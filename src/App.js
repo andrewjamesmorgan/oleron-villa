@@ -1,7 +1,7 @@
 import './css/App.css';
 import { useState, createContext } from 'react';
 // import { useMediaQuery } from 'react-responsive';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Layout from './pages/Layout';
 import Home from './pages/Home';
@@ -31,7 +31,7 @@ function App() {
           value={
             { language: language, setLanguage: setLanguage }
         }>
-        <BrowserRouter>
+        <HashRouter>
           <Routes>
             <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
@@ -45,7 +45,7 @@ function App() {
             <Route path="*" element={<Home />} />
             </Route>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </UserContext.Provider>
     </div>
   );
