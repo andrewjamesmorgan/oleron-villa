@@ -5,6 +5,6 @@ export default function Footer() {
   const { language } = useContext(UserContext);
   
   return (
-    <h1>{language === "fr" ? "Pied" : "Footer"}</h1>
+    <h1>{language === "fr" ? "Pied" : "Footer will go here"}</h1>
   );
 }
