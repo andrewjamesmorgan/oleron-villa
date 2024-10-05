@@ -8,8 +8,8 @@ import Home from './pages/Home';
 import HomeFR from './pages/HomeFR';
 import InsideHouse from './pages/InsideHouse';
 import InsideHouseFR from './pages/InsideHouseFR';
-import Booking from './pages/Booking';
-import BookingFR from './pages/BookingFR';
+import Bookings from './pages/Bookings';
+import BookingsFR from './pages/BookingsFR';
 import Contact from './pages/Contact';
 import ContactFR from './pages/ContactFR';
 
@@ -36,8 +36,8 @@ function App() {
             <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="fr" element={<HomeFR />} />
-            <Route path="booking" element={<Booking />} />
-            <Route path="booking-fr" element={<BookingFR />} />
+            <Route path="bookings" element={<Bookings />} />
+            <Route path="bookings-fr" element={<BookingsFR />} />
             <Route path="contact" element={<Contact />} />
             <Route path="contact-fr" element={<ContactFR />} />
             <Route path="inside_house" element={<InsideHouse />} />

@@ -1,7 +1,7 @@
 import ContactIntro from './ContactIntro';
 import ContactForm from './ContactForm';
 
-export default function Home() {
+export default function ContactContent() {
   // const [modalSrc, setModalSrc] = useState(null);
 
   return (

@@ -31,9 +31,9 @@ export default function Header() {
           <Link to="/inside_house"
             onClick={hideBurgerMenu}
             className={pathName === "/inside_house" ? "active" : "not-active"}>House</Link>
-          <Link to="/booking"
+          <Link to="/bookings"
             onClick={hideBurgerMenu}
-            className={pathName === "/booking" ? "active" : "not-active"}>Bookings</Link>
+            className={pathName === "/bookings" ? "active" : "not-active"}>Bookings</Link>
           <Link to="/contact"
             onClick={hideBurgerMenu}
             className={pathName === "/contact" ? "active" : "not-active"}>Contact us</Link>
@@ -50,9 +50,9 @@ export default function Header() {
           <Link to="/inside_house-fr" 
             onClick={hideBurgerMenu}
             className={pathName === "/inside_house-fr" ? "active" : "not-active"}>Maison</Link>
-          <Link to="/booking-fr"
+          <Link to="/bookings-fr"
             onClick={hideBurgerMenu}
-            className={pathName === "/booking-fr" ? "active" : "not-active"}>Réservations</Link>
+            className={pathName === "/bookings-fr" ? "active" : "not-active"}>Réservations</Link>
           <Link to="/contact-fr"
             onClick={hideBurgerMenu}
             className={pathName === "/contact-fr" ? "active" : "not-active"}>Nous contacter</Link>

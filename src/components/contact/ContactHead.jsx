@@ -1,6 +1,8 @@
 import React from "react";
 import {Helmet} from "react-helmet";
 
+// TODO: Update meta data
+
 export default function ContactHead() {
   return (
     <>
