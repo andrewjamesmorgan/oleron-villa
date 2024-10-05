@@ -1,22 +1,17 @@
-// import { useContext, useState } from 'react';
 import { useState } from 'react';
-
-// import { UserContext } from '../../App';
-import BookingsIntro from "./BookingsIntro";
+import {groupedBookingData} from '../../temp/groupedBookingData'; // Assuming this is an array of objects with a "year" field
 import Year from "./Year";
+import BookingsIntro from "./BookingsIntro"; // Assuming this was missing from your example
 
 export default function BookingsContent() {
-  // const { language } = useContext(UserContext);
   const [weeksToBook, setWeeksToBook] = useState([]);
 
   function includeInList(week, include) {
     if (include) {
-      // Add the week to the array if it's not already there
       if (!weeksToBook.includes(week)) {
         setWeeksToBook(prevWeeks => [...prevWeeks, week]);
       }
     } else {
-      // Remove the week from the array if it's present
       setWeeksToBook(prevWeeks => prevWeeks.filter(w => w !== week));
     }
   }
@@ -24,8 +19,14 @@ export default function BookingsContent() {
   return (
     <div className='space-above'>
       <BookingsIntro />
-      <Year year="2024" onSelect={includeInList}/>
+
+      {groupedBookingData.map((year, index) => (
+        <Year
+          key={index} 
+          year={year} 
+          onSelect={includeInList} 
+        />
+      ))}
     </div>
   );
 }
-

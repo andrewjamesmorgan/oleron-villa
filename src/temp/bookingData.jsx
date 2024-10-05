@@ -144,14 +144,6 @@ export let bookingData = [
       },
       {
         property: 'Oleron Villa',
-        start: new Date('2024-09-07'),
-        end: new Date('2024-09-14'),
-        booked: false,
-        price: 1200,
-        archived: false
-      },
-      {
-        property: 'Oleron Villa',
         start: new Date('2024-09-14'),
         end: new Date('2024-09-21'),
         booked: false,
@@ -266,6 +258,14 @@ export let bookingData = [
         property: 'Oleron Villa',
         start: new Date('2024-12-21'),
         end: new Date('2024-12-28'),
+        booked: false,
+        price: 1200,
+        archived: false
+      },
+      {
+        property: 'Oleron Villa',
+        start: new Date('2024-12-28'),
+        end: new Date('2025-01-04'),
         booked: false,
         price: 1200,
         archived: false
@@ -677,5 +677,13 @@ export let bookingData = [
         booked: false,
         price: 1200,
         archived: false
-      }
+      },
+      {
+        property: 'Oleron Villa',
+        start: new Date('2025-12-27'),
+        end: new Date('2026-01-03'),
+        booked: false,
+        price: 1200,
+        archived: false
+    }
   ];
