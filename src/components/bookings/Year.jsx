@@ -7,14 +7,18 @@ export default function Year({ year, onSelect }) {
 
   return (
     <div>
-      <h3>{year.year}</h3>
-      {year.months.map((monthData, index) => (
-        <Month
-          key={index} 
-          month={monthData} 
-          onSelect={onSelect} 
-        />
-      ))}
+      <h3 className="year">{year.year}</h3>
+      <div className='calendar-grid'>
+        {year.months.map((monthData, index) => (
+          <div className="calendar-month">
+            <Month 
+              key={index} 
+              month={monthData} 
+              onSelect={onSelect} 
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

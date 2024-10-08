@@ -4,14 +4,13 @@ export default function Week({ week, onSelect }) {
   const [checked, setChecked] = useState(false);
   const handleChange = () => {
     setChecked(!checked);
-    onSelect(`{week.start} - {week.end}`, checked);
+    onSelect(`${week.start} - ${week.end}`, !checked);
   };
 
   return (
     <div>
       <div className={week.booked ? "week-column-booked" : "week-column-available"}>
         <b>{new Date(week.start).getDate()} - {new Date(week.end).getDate()}</b>
-        {/* <i className={week.booked ? "fa fa-window-close" : "fa fa-check-square"}></i> */}
         {!week.booked && <div>
           <p>€{week.price}</p>
           <input 

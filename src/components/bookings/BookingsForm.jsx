@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App';
 import { config } from '../../config';
 
-export default function ContactForm() {
+export default function BookingsForm(weeks) {
   const {
     register,
     handleSubmit,
@@ -16,6 +16,12 @@ export default function ContactForm() {
 
   const onSubmit = async (data) => {
     setErrorMessage(null);
+    console.log(`weeks contains ${weeks.weeks.length} elements.`);
+    if (weeks.weeks.length === 0) {
+      setErrorMessage(language === "fr" ? "Vous devez sélectionner une ou plusieurs semaines"  : "You must select one or more weeks");
+      return;
+    }
+
     const formData = new FormData();
 
     formData.append("access_key", config.formKey);
@@ -23,9 +29,9 @@ export default function ContactForm() {
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value);
     });
-
+    formData.append('dates', weeks.weeks.join('\r\n'));
     let object = Object.fromEntries(formData);
-    object.subject = `Contact from ${object.name ? object.name : "unknown"} for Oléron Villa`;
+    object.subject = `Booking request from ${object.name ? object.name : "unknown"} for Oléron Villa`;
     object.redirect = "https://www.oleronvilla.com/";
     const json = JSON.stringify(object);
 
@@ -53,7 +59,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="container">
+    <div className='space-above'>
       {isSubmitSuccessful && !errorMessage ? (
         <h2 className="text-success">Votre message a été envoyé avec succèss!</h2>
       ) : (
@@ -106,12 +112,12 @@ export default function ContactForm() {
           </div>
           {/* Message Field */}
           <div className="mb-3">
-            <label htmlFor="message" className="form-label">Question</label>
+            <label htmlFor="message" className="form-label">{language === "fr" ? "Message (facultatif)" : "Message (optional)"}</label>
             <textarea
               id="message"
               rows={5}
               className={`form-control ${errors.message ? 'is-invalid' : ''}`}
-              {...register('message', { required: `${language === "fr" ? "Veuillez entrer un message" : "Please enter a message"}`})}
+              {...register('message')}
             />
             {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
           </div>
@@ -119,7 +125,7 @@ export default function ContactForm() {
           <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
             {isSubmitting ? 
               language === "fr" ? "Envoi en cours..." : "Sending..." :
-              language === "fr" ? "Envoyer" : "Send"
+              language === "fr" ? "Demander une réservation" : "Request booking"
             }
           </button>
           {errorMessage && <div className='error-message'>{errorMessage}</div>}
