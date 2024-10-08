@@ -6,13 +6,11 @@ export default function Month({ month, onSelect }) {
   const { language } = useContext(UserContext);
 
   return (
-    <div>
+    <div className="month-container">
       <h4>{language === 'fr'? month.monthFR : month.month}</h4>
-      <div>
+      <div className="month-box">
         {month.bookings.map((week, index) => (
-          <p key={index}>
-            <Week week={week} onSelect={onSelect}/>
-          </p>
+            <Week key={index} week={week} onSelect={onSelect}/>
         ))}
       </div>
     </div>

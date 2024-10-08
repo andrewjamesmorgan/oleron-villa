@@ -213,6 +213,49 @@ button.btn-primary-branded {
   border: var(--dark-highlight);
 }
 
+div.week-column-booked {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+  opacity: 0.5;
+}
+
+div.week-column-available {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100px;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: var(--light-highlight);
+}
+
+div.month-container {
+  background-color: var(--dark-highlight-translucent);
+  /* padding: 10px;  */
+  border-radius: 5px; /* Optional: Adds a slight rounding effect */
+}
+
+div.month-container h4 {
+  background-color: var(--dark-highlight);
+  color: var(--white);
+  padding: 5px;
+  margin: 0; 
+  /* border-radius: 3px; */
+}
+
+div.month-box {
+  display: flex;
+  gap: 5px;
+  margin: 0 auto; /* Centers the entire div horizontally */
+  width: fit-content; /* Shrinks the div to fit its content */
+  justify-content: center;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {
