@@ -6,12 +6,12 @@ export default function BookingsIntro() {
 
   return (
     <>
-      <div id='home-intro' className='banner-image-text'>
+      <div id='bookings-intro' className='banner-image-text'>
         <h1>{language === "fr" ? "Réservation de la maison" : "Booking the house"}</h1>
         <img
           src="../../images/outside/Oleron_Outside_House_1442.jpg"
-          alt={language === "en" ? "Booking the house"
-                                : "Réservation de la maison"}
+          alt={language === "en" ? "Outdoor view of the house - with white walls and blue shutters. Also show path leading into the woods"
+                                : "Vue extérieure de la maison - avec murs blancs et volets bleus. Afficher également le chemin menant aux bois"}
           className='full-width-image'
         />
       </div>
