@@ -1,10 +1,16 @@
-import { useContext } from 'react';
-import { UserContext } from '../App';
+// import { useContext } from 'react';
+// import { UserContext } from '../App';
+import FooterContact from './footer/FooterContact';
 
 export default function Footer() {
-  const { language } = useContext(UserContext);
+  // const { language } = useContext(UserContext);
   
   return (
-    <h1>{language === "fr" ? "Pied" : "Footer will go here"}</h1>
+    <div className="space-above" id="footer">
+      <div className='responsive-grid'>
+        <FooterContact/>
+        <FooterContact/>
+      </div>
+    </div>
   );
 }

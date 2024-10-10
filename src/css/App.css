@@ -304,6 +304,18 @@ h3.year {
   display: inline-block;
 }
 
+#footer {
+  background-color: var(--light-two);
+  padding: 20px;
+}
+
+.stacked-buttons {
+  display: flex;
+  flex-direction: column; /* Stack the buttons vertically */
+  align-items: flex-start; /* Left-align the buttons */
+  gap: 10px; /* Optional: Add space between buttons */
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {
