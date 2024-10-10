@@ -1,6 +1,7 @@
 // import { useContext } from 'react';
 // import { UserContext } from '../App';
 import FooterContact from './footer/FooterContact';
+import FooterWeather from './footer/FooterWeather';
 
 export default function Footer() {
   // const { language } = useContext(UserContext);
@@ -9,7 +10,7 @@ export default function Footer() {
     <div className="space-above" id="footer">
       <div className='responsive-grid'>
         <FooterContact/>
-        <FooterContact/>
+        <FooterWeather/>
       </div>
     </div>
   );

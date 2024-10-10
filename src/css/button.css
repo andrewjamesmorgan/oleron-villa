@@ -29,6 +29,28 @@ span.language-button-text {
     font-size: smaller;
 }
 
+.awesome-button {
+    background: none;
+    margin: -5px; 
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+        background 0.3s,
+        border-radius 0.7s,
+        box-shaddow 0.7s
+}
+
+.awesome-button:hover {
+    background: var(--light-highlight-translucent);
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px var(--dark-translucent)
+  }
+
+.awesome-button i {
+    margin-right: 5px;
+  }
+
 @media only screen and (max-width: 620px) {
     span.language-button-text {
         visibility: hidden;

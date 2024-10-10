@@ -218,7 +218,10 @@ button.btn-primary-branded {
 }
 
 button.btn-primary-branded:hover {
-  background-color: var(--dark-highlight);
+  /* background-color: var(--dark-highlight); */
+  background-color: var(--light-highlight);
+  color: var(--dark);
+  border-radius: 30px;
   font-size: 28x; 
   font-weight: bold; 
   box-shadow: 0px 4px 8px var(--dark-translucent);
@@ -316,6 +319,9 @@ h3.year {
   gap: 10px; /* Optional: Add space between buttons */
 }
 
+div.footer-column {
+  align-items: left;
+}
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {
