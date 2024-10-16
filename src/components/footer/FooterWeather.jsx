@@ -15,7 +15,7 @@ export default function FooterWeather() {
   // });
 
   const { data, isLoading, errorMessage } = useOpenWeather({
-    key: config.weatherKey,
+    key: config.openWeatherKey,
     lat: config.lat,
     lon: config.lon,
     lang: 'en',
