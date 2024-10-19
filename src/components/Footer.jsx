@@ -1,14 +1,10 @@
-// import { useContext } from 'react';
-// import { UserContext } from '../App';
 import FooterContact from './footer/FooterContact';
-import FooterWeather from './footer/FooterWeather';
+import FooterWeather from './footer/Weather/FooterWeather';
 
 export default function Footer() {
-  // const { language } = useContext(UserContext);
-  
   return (
     <div className="space-above" id="footer">
-      <div className='responsive-grid'>
+      <div className='responsive-grid footer-grid'>
         <FooterContact/>
         <FooterWeather/>
       </div>

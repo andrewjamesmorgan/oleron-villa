@@ -74,6 +74,10 @@ h2 {
   gap: 20px; 
 }
 
+.responsive-grid.footer-grid {
+  align-items: flex-start;
+}
+
 .responsive-grid > * {
   flex: 1;
   min-width: 300px;
@@ -322,6 +326,16 @@ h3.year {
 div.footer-column {
   align-items: left;
 }
+
+.current-weather {
+  color: var(--dark-highlight);
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {
