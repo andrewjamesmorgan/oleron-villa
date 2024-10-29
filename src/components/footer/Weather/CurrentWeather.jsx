@@ -9,5 +9,6 @@ export default function CurrentWeather({currentWeather}) {
       />
       <Temp temp={currentWeather.temp}/>
     </div>
+
   );
 }

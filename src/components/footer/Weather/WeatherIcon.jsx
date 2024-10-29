@@ -2,10 +2,10 @@ import {icons} from './weatherSVGs';
 
 export default function WeatherIcon({icon, description}) {
   return (
-    <div className="current-weather">
+    <div className="current-weather-icon">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 96 96"
+        viewBox="10 10 76 76"
         className="weather-icon"
         aria-label={`Weather icon for ${description}`}
       >
