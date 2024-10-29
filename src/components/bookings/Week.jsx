@@ -18,7 +18,7 @@ export default function Week({ week, onSelect }) {
             className="checkbox"
             checked={checked}
             onChange={handleChange}
-            />
+          />
         </div>}
       </div>
     </div>
