@@ -328,7 +328,7 @@ div.footer-column {
 }
 
 .current-weather {
-  color: var(--dark-highlight);
+  color: var(--dark);
 }
 
 .weather-icon {

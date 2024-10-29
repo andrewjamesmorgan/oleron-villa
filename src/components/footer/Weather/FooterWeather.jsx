@@ -14,7 +14,7 @@ export default function FooterWeather() {
         setError(null);
         try {
             const response = await fetch(
-                `https://api.openweathermap.org/data/3.0/onecall?lat=${config.lat}&lon=${config.lon}&lang={language}&appid=${config.openWeatherKey}`
+                `https://api.openweathermap.org/data/3.0/onecall?lat=${config.lat}&lon=${config.lon}&lang={language}&units=metric&appid=${config.openWeatherKey}`
             );
             if (!response.ok) {
                 throw new Error(`Error: ${response.statusText}`);
