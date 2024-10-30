@@ -363,6 +363,12 @@ span.temp-small {
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
+  
+  .responsive-grid {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   .responsive-text {
     margin-left: 10px;
     margin-right: 10px;
