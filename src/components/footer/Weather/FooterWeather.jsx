@@ -35,7 +35,10 @@ export default function FooterWeather() {
       {/* <h5>{language === "fr" ? "Météo" : "Weather"}</h5> */}
       <div className='responsive-grid footer-grid'>
         {weatherData && <>
-          <CurrentWeather currentWeather={weatherData.current}/>
+          <CurrentWeather 
+            currentWeather={weatherData.current}
+            dailyWeather={weatherData.daily[0]}
+          />
           <WeekWeather dailyWeather={weatherData.daily}/>
         </>}
       </div>

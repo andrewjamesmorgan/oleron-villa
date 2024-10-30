@@ -332,6 +332,8 @@ div.footer-column {
 
 .current-weather {
   color: var(--dark);
+  display: flex;
+  flex-direction: row;
 }
 
 .weather-icon {
@@ -351,9 +353,34 @@ span.temp-small {
 .week-weather {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   gap: 10px;
 }
+
+#weather-current-summary {
+  text-align: left;
+  line-height: 1.0;
+}
+
+.wind-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* .wind-speed {
+  font-size: 1.2em;
+} */
+
+.wind-direction {
+  font-size: 1.5em;
+  transition: transform 0.3s;
+}
+
+/* .direction-name {
+  font-size: 1.2em;
+  color: gray;
+} */
 
 .responsive-grid.footer-grid > * {
   flex: 1;

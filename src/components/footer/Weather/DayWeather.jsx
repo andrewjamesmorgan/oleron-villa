@@ -14,9 +14,10 @@ export default function DayWeather({dayWeather}) {
       <Temp 
         temp={dayWeather.temp.min}
         size="small"
-      /> - <Temp 
+      />-<Temp 
       temp={dayWeather.temp.max}
       size="small"
+      suffix="true"
     />
     </span>
   );
