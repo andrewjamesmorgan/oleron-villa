@@ -1,7 +1,7 @@
-export default function Temp({ temp }) {
+export default function Temp({ temp, size }) {
   return (
-    <div className="temp">
+    <span className={size === 'small' ? "temp-small" : "temp"}>
       {Math.round(temp)}°C
-    </div>
+    </span>
   );
 }

@@ -4,10 +4,10 @@ import FooterWeather from './footer/Weather/FooterWeather';
 export default function Footer() {
   return (
     <div className="space-above" id="footer">
-      <div className='responsive-grid footer-grid'>
+      {/* <div className='responsive-grid footer-grid'> */}
         <FooterContact/>
         <FooterWeather/>
-      </div>
+      {/* </div> */}
     </div>
   );
 }

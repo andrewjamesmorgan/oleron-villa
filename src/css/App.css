@@ -336,6 +336,21 @@ div.footer-column {
   height: 100px;
 }
 
+.weather-icon-small {
+  width: 50px;
+  height: 50px;
+}
+
+span.temp-small {
+  font-size: 12px;
+}
+
+.week-weather {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   .responsive-text {

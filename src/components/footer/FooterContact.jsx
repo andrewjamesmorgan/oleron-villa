@@ -7,7 +7,7 @@ export default function FooterContact() {
 
   return (
     <div className="footer-column">
-      <h5>{language === "fr" ? "Contactez-nous" : "Contact us"}</h5>
+      {/* <h5>{language === "fr" ? "Contactez-nous" : "Contact us"}</h5> */}
       <div className="stacked-buttons">
         <AwesomeButton 
           label="email" 

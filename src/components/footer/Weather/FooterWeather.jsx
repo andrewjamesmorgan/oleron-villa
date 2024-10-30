@@ -3,6 +3,7 @@ import { UserContext } from '../../../App';
 import { config } from '../../../config';
 import Error from '../../Error';
 import CurrentWeather from './CurrentWeather';
+import WeekWeather from './WeekWeather';
 
 export default function FooterWeather() {
   const { language } = useContext(UserContext);
@@ -31,9 +32,12 @@ export default function FooterWeather() {
 
   return (
     <div className="footer-column">
-      <h5>{language === "fr" ? "Météo" : "Weather"}</h5>
-        {weatherData && <CurrentWeather currentWeather={weatherData.current}/>}
-        {error && <Error errorMessage={error}/>}
+      {/* <h5>{language === "fr" ? "Météo" : "Weather"}</h5> */}
+      {weatherData && <>
+        <CurrentWeather currentWeather={weatherData.current}/>
+        <WeekWeather dailyWeather={weatherData.daily}/>
+      </>}
+      {error && <Error errorMessage={error}/>}
     </div>
   );
 }
