@@ -76,6 +76,9 @@ h2 {
 
 .responsive-grid.footer-grid {
   align-items: flex-start;
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-bottom: 20px;
 }
 
 .responsive-grid > * {
@@ -348,7 +351,14 @@ span.temp-small {
 .week-weather {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   gap: 10px;
+}
+
+.responsive-grid.footer-grid > * {
+  flex: 1;
+  min-width: 400px;
+  box-sizing: border-box;
 }
 
 @media only screen and (max-width: 620px) {

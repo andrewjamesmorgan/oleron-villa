@@ -5,8 +5,8 @@ export default function Footer() {
   return (
     <div className="space-above" id="footer">
       {/* <div className='responsive-grid footer-grid'> */}
-        <FooterContact/>
         <FooterWeather/>
+        <FooterContact/>
       {/* </div> */}
     </div>
   );

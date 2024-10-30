@@ -1,9 +1,9 @@
-import { useContext } from 'react';
-import { UserContext } from '../../App';
+// import { useContext } from 'react';
+// import { UserContext } from '../../App';
 import AwesomeButton from '../buttons/AwesomeButton';
 
 export default function FooterContact() {
-  const { language } = useContext(UserContext);
+  // const { language } = useContext(UserContext);
 
   return (
     <div className="footer-column">
