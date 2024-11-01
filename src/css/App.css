@@ -75,10 +75,25 @@ h2 {
 }
 
 .responsive-grid.footer-grid {
-  align-items: flex-start;
   margin-left: 0px;
   margin-right: 0px;
-  margin-bottom: 20px;
+}
+
+.responsive-grid.footer-grid > * {
+  flex: 1;
+  min-width: 400px;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+#footer-contact {
+  min-width: 150px;
+  max-width: 150px;
+}
+
+#footer-current-weather {
+  min-width: 220px;
+  max-width: 220px;
 }
 
 .responsive-grid > * {
@@ -377,31 +392,17 @@ span.temp-small {
   transition: transform 0.3s;
 }
 
-/* .direction-name {
-  font-size: 1.2em;
-  color: gray;
-} */
-
-.responsive-grid.footer-grid > * {
-  flex: 1;
-  min-width: 400px;
-  box-sizing: border-box;
-}
-
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
   .responsive-grid {
-    margin-left: 0px;
-    margin-right: 0px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .responsive-text {
     margin-left: 10px;
     margin-right: 10px;
   }
-  /* div.space-above {
-    margin-top: 70px;
-  } */
 }
 

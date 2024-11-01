@@ -6,7 +6,7 @@ export default function FooterContact() {
   // const { language } = useContext(UserContext);
 
   return (
-    <div className="footer-column">
+    <div className="footer-column" id="footer-contact">
       {/* <h5>{language === "fr" ? "Contactez-nous" : "Contact us"}</h5> */}
       <div className="stacked-buttons">
         <AwesomeButton 

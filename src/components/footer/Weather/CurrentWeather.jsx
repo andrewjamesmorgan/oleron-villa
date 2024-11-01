@@ -4,7 +4,7 @@ import WindIndicator from './WindIndicator';
 
 export default function CurrentWeather({currentWeather, dailyWeather}) {
   return (
-    <div className="current-weather">
+    <div className="current-weather" id="footer-current-weather">
       <div>
         <WeatherIcon 
           icon={currentWeather.weather[0].icon}
