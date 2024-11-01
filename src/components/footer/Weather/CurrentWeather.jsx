@@ -3,6 +3,13 @@ import Temp from './Temp';
 import WindIndicator from './WindIndicator';
 
 export default function CurrentWeather({currentWeather, dailyWeather}) {
+  function timeStampToTime(timestamp) {
+    const date = new Date(timestamp * 1000);
+    const hours = String(date.getUTCHours()).padStart(2, '0');
+    const minutes = String(date.getUTCMinutes()).padStart(2, '0'); 
+    return `${hours}:${minutes}`;
+  }
+
   return (
     <div className="current-weather" id="footer-current-weather">
       <div>
@@ -12,7 +19,7 @@ export default function CurrentWeather({currentWeather, dailyWeather}) {
         />
         <Temp temp={currentWeather.temp} suffix="true"/>
       </div>
-      <div>
+      <div id="weather-current-summary-container">
         <div id="weather-current-summary">
           <Temp 
             temp={dailyWeather.temp.min}/>-<Temp 
@@ -21,6 +28,12 @@ export default function CurrentWeather({currentWeather, dailyWeather}) {
             speed={currentWeather.wind_speed}
             degrees={currentWeather.wind_deg}
           />
+          <div>
+            <i class="fa fa-sun-o"></i> <i class="fa fa-arrow-up"></i>{` ${timeStampToTime(dailyWeather.sunrise)}`}
+          </div>
+          <div>
+            <i class="fa fa-sun-o"></i> <i class="fa fa-arrow-down"></i>{` ${timeStampToTime(dailyWeather.sunset)}`}
+          </div>
         </div>
       </div>
     </div>

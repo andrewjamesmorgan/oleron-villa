@@ -351,6 +351,20 @@ div.footer-column {
   flex-direction: row;
 }
 
+#weather-current-summary-container {
+  display: flex;
+  align-items: center; 
+}
+
+#weather-current-summary > * {
+  margin-bottom: 8px;
+}
+
+/* Remove margin from the last item to avoid extra space */
+#weather-current-summary > *:last-child {
+  margin-bottom: 0;
+}
+
 .weather-icon {
   width: 100px;
   height: 100px;
