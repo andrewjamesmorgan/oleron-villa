@@ -30,7 +30,16 @@ export default function Header() {
             className={pathName === "/home" || pathName === "/" ? "active" : "not-active"}>Home</Link>
           <Link to="/inside_house"
             onClick={hideBurgerMenu}
-            className={pathName === "/inside_house" ? "active" : "not-active"}>House</Link>
+            className={pathName === "/inside_house" ? "active" : "not-active"}>Inside house</Link>
+          <Link to="/outside_house"
+            onClick={hideBurgerMenu}
+            className={pathName === "/outside_house" ? "active" : "not-active"}>Outside house</Link>
+          <Link to="/facilities"
+            onClick={hideBurgerMenu}
+            className={pathName === "/facilities" ? "active" : "not-active"}>Facilities</Link>
+          <Link to="/location"
+            onClick={hideBurgerMenu}
+            className={pathName === "/location" ? "active" : "not-active"}>Location</Link>
           <Link to="/bookings"
             onClick={hideBurgerMenu}
             className={pathName === "/bookings" ? "active" : "not-active"}>Bookings</Link>
@@ -49,7 +58,16 @@ export default function Header() {
             className={pathName === "/fr" || pathName === "/" ? "active" : "not-active"}>Accueil</Link>
           <Link to="/inside_house-fr" 
             onClick={hideBurgerMenu}
-            className={pathName === "/inside_house-fr" ? "active" : "not-active"}>Maison</Link>
+            className={pathName === "/inside_house-fr" ? "active" : "not-active"}>Intérieur</Link>
+          <Link to="/outside_house-fr"
+            onClick={hideBurgerMenu}
+            className={pathName === "/outside_house-fr" ? "active" : "not-active"}>Extérieur</Link>
+          <Link to="/facilities-fr"
+            onClick={hideBurgerMenu}
+            className={pathName === "/facilities-fr" ? "active" : "not-active"}>Facilities</Link>
+          <Link to="/location-fr"
+            onClick={hideBurgerMenu}
+            className={pathName === "/location-fr" ? "active" : "not-active"}>Location</Link>
           <Link to="/bookings-fr"
             onClick={hideBurgerMenu}
             className={pathName === "/bookings-fr" ? "active" : "not-active"}>Réservations</Link>
