@@ -15,7 +15,7 @@ export default function InsideHouseCell({action}) {
     <p>Maison à étage, 4 chambres (dont 2 avec leurs propres salles d'eau) offrent des couchages pour 9 personnes, le canapé convertible du salon ajoutant un couchage pour 2 personnes supplémentaires.</p>
     <p>Au rez-de-chaussée, un grand salon-salle à manger de 56 m2 vous permettra des moments conviviaux dans un espace moderne et confortable.</p>
   `
-  return (
+    return (
     <InfoBox 
         imageSrc="../../images/inside/Oleron_Lounge_1900.jpg"
         alt={language === "fr" ? "Un photo" : "A photo"}
