@@ -9,8 +9,9 @@ export default function InfoBox({imageSrc, alt, action, route, body}) {
   }
   
   function openRoute() {
-    console.log(`Routing to ${route}`);
-    navigate(route);
+    if (route) {
+      navigate(route)
+    };
   }
   
   return (
