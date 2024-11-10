@@ -419,5 +419,11 @@ span.temp-small {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  #footer {
+    background-color: var(--light-two);
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 
