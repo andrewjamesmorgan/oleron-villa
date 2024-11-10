@@ -69,7 +69,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: center;
+  align-items: top;
   justify-content: space-between; 
   gap: 20px; 
 }
