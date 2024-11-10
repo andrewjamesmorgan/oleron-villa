@@ -1,4 +1,20 @@
 :root {
+  --dark: #1d6f93; /* Vibrant ocean blue */
+  --dark-translucent: rgba(29, 111, 147, 0.8);
+  --light-highlight: #58d1ec; /* Bright turquoise blue */
+  --light-highlight-translucent: rgba(88, 209, 236, 0.5);
+  --dark-highlight: #4ec2a5; /* Bold sea green */
+  --dark-highlight-translucent: rgba(78, 194, 165, 0.5);
+  --light-one: #fff8e6; /* Soft, sandy off-white */
+  --light-two: #ffedbf; /* Sunny yellow */
+  --white: #ffffff; /* Pure white */
+  --dark-accent: #a1b7b8; /* Lightened, lively gray-blue */
+  --light-accent: #aef3e2; /* Bright mint green */
+  --error-background: rgba(255, 69, 58, 0.15); /* More visible coral red */
+  --error-color: #ff453a; /* Bright coral for error text */
+}
+
+/* :root {
     --dark: #001e2b;
     --dark-translucent: rgba(00,30,43,0.8);
     --light-highlight: #00ed64;
@@ -24,7 +40,7 @@
     --vibrant-orange: #FF8C00;
     --deep-blue: #1E90FF;
     --soft-white: #F5F5F5;
-}
+} */
 
 @font-face {
     font-family: Euclid Circular A;
