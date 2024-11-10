@@ -347,7 +347,7 @@ div.footer-column {
 }
 
 .current-weather {
-  color: var(--dark);
+  /* color: var(--dark); */
   display: flex;
   flex-direction: row;
 }
