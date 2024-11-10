@@ -1,5 +1,5 @@
 :root {
-  --dark: #1d6f93; /* Vibrant ocean blue */
+  --dark: black; /* Vibrant ocean blue */
   --dark-translucent: rgba(29, 111, 147, 0.8);
   --light-highlight: #58d1ec; /* Bright turquoise blue */
   --light-highlight-translucent: rgba(88, 209, 236, 0.5);
