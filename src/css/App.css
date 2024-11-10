@@ -236,6 +236,7 @@ button.btn-primary-branded {
   color: var(--dark);
   font-size: 24px;
   padding: 10px 20px;
+  margin-bottom: 15px;
   transition: all 0.3s ease;
 }
 
