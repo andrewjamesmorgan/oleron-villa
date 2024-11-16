@@ -16,7 +16,9 @@
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.53.0",
     "react-responsive": "^10.0.0",
-    "react-router-dom": "^6.26.2"
+    "react-router-dom": "^6.26.2",
+    "@googlemaps/markerclusterer": "^2.5.1",
+    "@vis.gl/react-google-maps": "latest"
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

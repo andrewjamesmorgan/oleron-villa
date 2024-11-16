@@ -29,10 +29,10 @@ export default function CurrentWeather({currentWeather, dailyWeather}) {
             degrees={currentWeather.wind_deg}
           />
           <div>
-            <i class="fa fa-sun-o"></i> <i class="fa fa-arrow-up"></i>{` ${timeStampToTime(dailyWeather.sunrise)}`}
+            <i className="fa fa-sun-o"></i> <i className="fa fa-arrow-up"></i>{` ${timeStampToTime(dailyWeather.sunrise)}`}
           </div>
           <div>
-            <i class="fa fa-sun-o"></i> <i class="fa fa-arrow-down"></i>{` ${timeStampToTime(dailyWeather.sunset)}`}
+            <i className="fa fa-sun-o"></i> <i className="fa fa-arrow-down"></i>{` ${timeStampToTime(dailyWeather.sunset)}`}
           </div>
         </div>
       </div>

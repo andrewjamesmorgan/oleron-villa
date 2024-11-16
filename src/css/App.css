@@ -407,6 +407,11 @@ span.temp-small {
   transition: transform 0.3s;
 }
 
+div.map {
+  height: 1000px;
+  width: 100%;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
@@ -418,6 +423,10 @@ span.temp-small {
   .responsive-text {
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  div.map {
+    height: 500px;
   }
 
   #footer {
