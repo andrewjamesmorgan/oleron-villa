@@ -376,6 +376,11 @@ div.footer-column {
   height: 50px;
 }
 
+#current-temp {
+  position: relative;
+  top: -12px;
+}
+
 span.temp-small {
   font-size: 12px;
 }

@@ -17,7 +17,9 @@ export default function CurrentWeather({currentWeather, dailyWeather}) {
           icon={currentWeather.weather[0].icon}
           description={currentWeather.weather[0].description}
         />
-        <Temp temp={currentWeather.temp} suffix="true"/>
+        <span id="current-temp" >
+          <Temp temp={currentWeather.temp} suffix="true"/>
+        </span>
       </div>
       <div id="weather-current-summary-container">
         <div id="weather-current-summary">
