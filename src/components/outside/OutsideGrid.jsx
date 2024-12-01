@@ -14,9 +14,9 @@ export default function InsideGrid({action}) {
       <GardenCell action={action} />
     </div>
     <div className='responsive-grid'>
-    <ParkingCell action={action} />
-    <WoodsCell action={action} />
-    <BeachCell action={action} />
+      <ParkingCell action={action} />
+      <WoodsCell action={action} />
+      <BeachCell action={action} />
     </div>
     <div className='responsive-grid'>
     </div>

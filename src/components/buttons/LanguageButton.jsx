@@ -28,6 +28,9 @@ export default function LanguageButton({buttonLanguage}) {
         case "/outside_house":
           newPathName = "/outside_house-fr";
           break;
+        case "/facilities":
+          newPathName = "/facilities-fr";
+          break;
         case "/contact":
           newPathName = "/contact-fr";
           break;
@@ -47,6 +50,9 @@ export default function LanguageButton({buttonLanguage}) {
           break;
         case "/outside_house-fr":
           newPathName = "/outside_house";
+          break;
+        case "/facilities-fr":
+          newPathName = "/facilities";
           break;
         case "/contact-fr":
           newPathName = "/contact";
