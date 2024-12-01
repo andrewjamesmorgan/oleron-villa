@@ -417,6 +417,17 @@ div.map {
   width: 100%;
 }
 
+a {
+  color: var(--light-highlight);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline; 
+  color: var(--light-highlight); 
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
