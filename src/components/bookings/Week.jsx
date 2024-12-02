@@ -10,7 +10,7 @@ export default function Week({ week, onSelect }) {
   return (
     <div>
       <div className={week.booked ? "week-column-booked" : "week-column-available"}>
-        <b>{new Date(week.start).getDate()} - {new Date(week.end).getDate()}</b>
+        <b>{new Date(week.start).getDate()}-{new Date(week.end).getDate()}</b>
         {!week.booked && <div>
           <p>€{week.price}</p>
           <input 

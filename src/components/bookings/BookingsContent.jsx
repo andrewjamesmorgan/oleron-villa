@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {groupedBookingData} from '../../temp/groupedBookingData';
+import {groupedBookingData} from '../../data/groupedBookingData';
 import Year from "./Year";
 import BookingsIntro from "./BookingsIntro";
 import BookingsForm from "./BookingsForm";
