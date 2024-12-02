@@ -121,6 +121,9 @@ export default function BookingsForm(weeks) {
             />
             {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
           </div>
+          <div className="mb-3">
+            <h4>{ language === "fr" ? "A noter que €150 seront ajoutés à votre facture pour participer aux frais de ménage de la maison entre les invités." : "Note that €150 will be added to your bill to contribute to the cost of cleaning the house between guests." }</h4>
+          </div>
           {/* Submit Button */}
           <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
             {isSubmitting ? 
