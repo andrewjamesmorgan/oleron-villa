@@ -9,17 +9,12 @@ export default function WifiCell({action}) {
   const english = `
     <h3>Internet</h3>
     <p>The whole house and garden has fast (900+ Mbps) wired and wireless (WiFi) internet.</p>
-    <p></p>
-    <p></p>
-    <p></p>
   `;
   
   const frenchAlt = "Grande table à manger, avec cuisine en arrière-plan";
   const french = `
     <h3>Internet</h3>
     <p>Toute la maison et le jardin disposent d'une connexion Internet filaire et sans fil (WiFi) rapide (900+ Mbps).</p>
-    <p></p>
-    <p></p>
   `;
 
   return (

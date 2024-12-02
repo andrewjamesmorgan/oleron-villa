@@ -10,8 +10,8 @@ export default function FacilitiesIntro() {
         <h1>{language === "fr" ? "Equipements" : "Facilities"}</h1>
         <img
           src="../../images/facilities/oleron_tv_1900.jpg"
-          alt={language === "en" ? "Three images showing off features of Ile d'Oleron. The first is a pink flower, the second is a pink fishing hut and a series of colorful flags from lobster/crab pot, the third is a bare footprint on a sandy beach"
-                                : "Trois images mettant en valeur les caractéristiques de l'Île d'Oléron. La première est une fleur rose, la seconde est une cabane de pêche rose et une série de drapeaux colorés provenant d'un casier à homard/crabe, la troisième est une empreinte nue sur une plage de sable."}
+          alt={language === "en" ? "Large TV screen with speakers and AV components. Two sofas and two armchairs."
+                                : "Grand écran de télévision avec haut-parleurs et composants AV. Deux canapés et deux fauteuils."}
           className='full-width-image'
         />
       </div>
