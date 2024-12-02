@@ -19,7 +19,7 @@ export default function BookingCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/booking/oleron-calendarbooking.jpg"
+        imageSrc="../../images/booking/oleron-calendar.jpg"
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         route={language === "fr" ? "/bookings-fr" : "/bookings"}
