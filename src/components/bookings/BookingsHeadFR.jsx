@@ -33,7 +33,7 @@ export default function BookingsHeadFR() {
           content="Profitez d'un séjour inoubliable sur l'Île d'Oléron dans notre maison de vacances. À deux pas des plages et des attractions locales. Réservez maintenant !"
         />
         <meta property="og:image" content="image-url.jpg" /> {/* Remplacez par l'URL de votre image */}
-        <meta property="og:url" content="https://oleronvilla.com/#/bookings-fr" /> {/* Remplacez par l'URL de votre site */}
+        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
         <meta property="og:locale" content="fr_FR" />
 
         {/* Twitter */}

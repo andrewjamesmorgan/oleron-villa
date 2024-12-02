@@ -32,7 +32,7 @@ export default function FacilitiesHead() {
           property="og:description"
           content="Explore the facilities at Oléron Villa, including a fully equipped kitchen, spacious dining area, outdoor entertaining spaces, internet, and much more."
         />
-        <meta property="og:image" content="image-url.jpg" /> {/* Replace with your image URL */}
+        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
         <meta property="og:url" content="https://oleronvilla.com/#/facilities" /> {/* Replace with your site URL */}
         <meta property="og:locale" content="en_US" />
 

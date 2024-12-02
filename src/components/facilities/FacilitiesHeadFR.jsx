@@ -32,7 +32,7 @@ export default function FacilitiesHeadFR() {
           property="og:description"
           content="Découvrez les équipements de la villa Oléron, comprenant une cuisine entièrement équipée, une grande salle à manger, des espaces extérieurs, internet, et bien plus encore."
         />
-        <meta property="og:image" content="image-url.jpg" /> {/* Remplacez par l'URL de votre image */}
+        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
         <meta property="og:url" content="https://oleronvilla.com/#/facilities" /> {/* Remplacez par l'URL de votre site */}
         <meta property="og:locale" content="fr_FR" />
 

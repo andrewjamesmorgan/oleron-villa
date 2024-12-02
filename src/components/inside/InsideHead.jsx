@@ -32,7 +32,7 @@ export default function InsideHead() {
           property="og:description"
           content="Explore the interior of Oléron Villa, including spacious bedrooms, a modern kitchen, entertainment systems, and more. Perfect for a relaxing stay on Île d'Oléron."
         />
-        <meta property="og:image" content="image-url.jpg" /> {/* Replace with your image URL */}
+        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
         <meta property="og:url" content="https://oleronvilla.com/#/inside_house" /> {/* Replace with your site URL */}
         <meta property="og:locale" content="en_US" />
 
