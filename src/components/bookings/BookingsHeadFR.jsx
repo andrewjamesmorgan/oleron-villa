@@ -1,9 +1,7 @@
 import React from "react";
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
-// TODO: Update meta data
-
-export default function HomeHeadFR() {
+export default function BookingsHeadFR() {
   return (
     <>
       <Helmet>
@@ -13,37 +11,37 @@ export default function HomeHeadFR() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Découvrez notre location de vacances sur l'Île d'Oléron. Profitez d'un séjour inoubliable dans une maison confortable à proximité des plages, des pistes cyclables et des attractions locales. Réservez dès maintenant!"
+          content="Réservez Oléron Villa, une maison de vacances spacieuse sur l'Île d'Oléron"
         />
         <meta
           name="keywords"
-          content="location de vacances, Île d'Oléron, maison de vacances, plages, séjour en France, hébergement, Oléron"
+          content="location de vacances, Île d'Oléron, maison de vacances, plages, séjour en France, hébergement, Oléron, réservation, maison de vacances"
         />
-        <meta name="author" content="Nom de l'Entreprise" />
+        <meta name="author" content="Andrew Morgan" />
         <meta name="robots" content="index, follow" />
 
-        <title>Location de Vacances sur l'Île d'Oléron | Maison de Vacances</title>
+        <title>Oléron Villa. Maison de vacances sur l'Île d'Oléron - Réservations</title>
 
-        <link rel="stylesheet" href="styles.css" /> {/* Replace with your CSS file path */}
-        <link rel="icon" href="favicon.ico" type="image/x-icon" /> {/* Replace with your favicon path */}
+        <link rel="stylesheet" href="styles.css" /> {/* Remplacez par le chemin de votre fichier CSS */}
+        <link rel="icon" href="favicon.ico" type="image/x-icon" /> {/* Remplacez par le chemin de votre favicon */}
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Location de Vacances sur l'Île d'Oléron" />
+        <meta property="og:title" content="Location de vacances sur l'Île d'Oléron" />
         <meta
           property="og:description"
-          content="Profitez d'un séjour inoubliable sur l'Île d'Oléron dans notre maison de vacances. À quelques pas des plages et des attractions locales. Réservez maintenant!"
+          content="Profitez d'un séjour inoubliable sur l'Île d'Oléron dans notre maison de vacances. À deux pas des plages et des attractions locales. Réservez maintenant !"
         />
-        <meta property="og:image" content="image-url.jpg" /> {/* Replace with your image URL */}
-        <meta property="og:url" content="https://www.votre-site.com" /> {/* Replace with your site URL */}
+        <meta property="og:image" content="image-url.jpg" /> {/* Remplacez par l'URL de votre image */}
+        <meta property="og:url" content="https://oleronvilla.com/#/bookings-fr" /> {/* Remplacez par l'URL de votre site */}
         <meta property="og:locale" content="fr_FR" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Location de Vacances sur l'Île d'Oléron" />
+        <meta name="twitter:title" content="Location de vacances sur l'Île d'Oléron" />
         <meta
           name="twitter:description"
-          content="Profitez d'un séjour inoubliable sur l'Île d'Oléron dans notre maison de vacances. À quelques pas des plages et des attractions locales. Réservez maintenant!"
+          content="Profitez d'un séjour inoubliable sur l'Île d'Oléron dans notre maison de vacances. À deux pas des plages et des attractions locales. Réservez maintenant !"
         />
       </Helmet>
     </>

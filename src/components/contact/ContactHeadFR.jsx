@@ -35,7 +35,7 @@ export default function ContactHeadFR() {
           content="Profitez d'un séjour inoubliable sur l'Île d'Oléron dans notre maison de vacances. À quelques pas des plages et des attractions locales. Réservez maintenant!"
         />
         <meta property="og:image" content="image-url.jpg" /> {/* Replace with your image URL */}
-        <meta property="og:url" content="https://www.votre-site.com" /> {/* Replace with your site URL */}
+        <meta property="og:url" content="http://oleronvilla.com/#/contact-fr" /> {/* Replace with your site URL */}
         <meta property="og:locale" content="fr_FR" />
 
         {/* Twitter */}
