@@ -7,7 +7,7 @@ export default function CleaningCell({action}) {
 
   const englishAlt = 'A cartoon character happily mopping the floor.';
   const english = `
-    <h3>Cleaining</h3>
+    <h3>Cleaning</h3>
     <p>To ensure that the house is clean for our next tenants, we commission a cleaning service after each stay. We add 150€ to the cost of each booking to cover part of this cost – you'll see this in the estimated price when requesting a booking.</p>
   `;
   

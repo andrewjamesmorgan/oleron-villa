@@ -16,11 +16,11 @@ export default function FooterContact() {
         <AwesomeButton 
           label="WhatsApp" 
           icon="fa fa-whatsapp" 
-          url="https://wa.me/447833483595"/>
+          url="https://wa.me/447899984259"/>
         <AwesomeButton 
-          label="+44-7833483595" 
+          label="+44-7899984259" 
           icon="fa-phone" 
-          url="tel:+447833483595"/>
+          url="tel:+447899984259"/>
       </div>
     </div>
   );
