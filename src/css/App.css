@@ -86,9 +86,14 @@ h2 {
   box-sizing: border-box;
 }
 
+div.week-weather {
+  margin-top: 8px;
+}
+
 #footer-contact {
   min-width: 180px;
   max-width: 180px;
+  margin-top: 18px;
 }
 
 #footer-current-weather {
