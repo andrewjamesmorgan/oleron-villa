@@ -32,8 +32,6 @@ export default function FooterWeather() {
 
   return (
     <div className="footer-column">
-      {/* <h5>{language === "fr" ? "Météo" : "Weather"}</h5> */}
-      {/* <div className='responsive-grid footer-grid'> */}
         {weatherData && <>
           <CurrentWeather 
             currentWeather={weatherData.current}
@@ -41,7 +39,6 @@ export default function FooterWeather() {
           />
           <WeekWeather dailyWeather={weatherData.daily}/>
         </>}
-      {/* </div> */}
       {error && <Error errorMessage={error}/>}
     </div>
   );

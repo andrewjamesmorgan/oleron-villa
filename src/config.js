@@ -5,5 +5,6 @@ export let config = {
     openWeatherKey: 'f36a2ddc5e33d14d3708b92f20f1d315',
     lat: '45.8708907',
     lon: '-1.2491633',
+    mapId: '15019cba5d15b2ed',
     location: 'Oléron Villa'
 }
