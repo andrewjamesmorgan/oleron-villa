@@ -3,8 +3,8 @@ export let config = {
     weatherKey: 'ddc83cec21a743aab4a91a091b83746f',
     // openWeatherKey: 'c569fc8cf2102b74d75c2439b9079c07',
     openWeatherKey: 'f36a2ddc5e33d14d3708b92f20f1d315',
-    lat: '45.8708907',
-    lon: '-1.2491633',
+    lat: 45.8708907,
+    lon: -1.2491633,
     mapId: '15019cba5d15b2ed',
     location: 'Oléron Villa'
 }
