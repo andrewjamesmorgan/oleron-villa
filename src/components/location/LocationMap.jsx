@@ -1,8 +1,9 @@
 import {APIProvider, Map} from '@vis.gl/react-google-maps';
 import LocationPoiMarkers from './LocationPoiMarkers';
+import { config } from '../../config';
 
 const locations = [
-  {key: 'oleronVilla', location: { lat: 45.87092056675535, lng: -1.2465387449637106 }},
+  {key: 'oleronVilla', location: { lat: config.lat, lng: config.lon }},
 ];
 
 export default function LocationMap() {
@@ -13,8 +14,8 @@ export default function LocationMap() {
         <div className='map'>
           <Map
             defaultZoom={10}
-            defaultCenter={ { lat: 45.87092056675535, lng: -1.2465387449637106 } }
-            mapId='15019cba5d15b2ed'
+            defaultCenter={ { lat: config.lat, lng: config.lon } }
+            mapId={config.mapId}
           >
             <LocationPoiMarkers pois={locations} />
           </Map>
