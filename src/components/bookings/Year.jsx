@@ -8,7 +8,8 @@ export default function Year({ year, onSelect }) {
         {year.months.map((monthData, index) => (
           <div className="calendar-month">
             <Month 
-              key={index} 
+              key={`${year.year}-${index}`} 
+              year={year.year}
               month={monthData} 
               onSelect={onSelect} 
             />

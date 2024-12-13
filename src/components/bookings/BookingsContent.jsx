@@ -20,9 +20,9 @@ export default function BookingsContent() {
   return (
     <div className='space-above'>
       <BookingsIntro />
-      {groupedBookingData.map((year, index) => (
+      {groupedBookingData.map((year) => (
         <Year
-          key={index} 
+          key={`year-${year.year}`} 
           year={year} 
           onSelect={includeInList} 
         />
