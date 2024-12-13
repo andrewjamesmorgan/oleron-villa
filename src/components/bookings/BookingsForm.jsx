@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { UserContext } from '../../App';
 import { config } from '../../config';
 
-export default function BookingsForm(weeks) {
+export default function BookingsForm({weeks}) {
   const {
     register,
     handleSubmit,
@@ -16,8 +16,8 @@ export default function BookingsForm(weeks) {
 
   const onSubmit = async (data) => {
     setErrorMessage(null);
-    console.log(`weeks contains ${weeks.weeks.length} elements.`);
-    if (weeks.weeks.length === 0) {
+    console.log(`weeks contains ${weeks.length} elements.`);
+    if (weeks.length === 0) {
       setErrorMessage(language === "fr" ? "Vous devez sélectionner une ou plusieurs semaines"  : "You must select one or more weeks");
       return;
     }
@@ -29,7 +29,7 @@ export default function BookingsForm(weeks) {
     Object.entries(data).forEach(([key, value]) => {
       formData.append(key, value);
     });
-    formData.append('dates', weeks.weeks.join('\r\n'));
+    formData.append('dates', weeks.join('\r\n'));
     let object = Object.fromEntries(formData);
     object.subject = `Booking request from ${object.name ? object.name : "unknown"} for Oléron Villa`;
     object.redirect = "https://www.oleronvilla.com/";
@@ -61,7 +61,8 @@ export default function BookingsForm(weeks) {
   return (
     <div className='space-above'>
       {isSubmitSuccessful && !errorMessage ? (
-        <h2 className="text-success">Votre message a été envoyé avec succèss!</h2>
+        <h2 className="text-success">{language === "fr" ? "Votre message a été envoyé avec succèss!"
+          : "Your message has been sent!"}</h2>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
           <div className="responsive-form">
