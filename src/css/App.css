@@ -220,6 +220,7 @@ div.error-message {
   padding: 10px;
   border-radius: 8px;
   margin-top: 10px; 
+  margin-bottom: 20px;
 }
 
 .responsive-form {
