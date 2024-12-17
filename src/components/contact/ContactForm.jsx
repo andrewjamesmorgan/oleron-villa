@@ -55,7 +55,7 @@ export default function ContactForm() {
   return (
     <div className="container">
       {isSubmitSuccessful && !errorMessage ? (
-        <h2 className="text-success">Votre message a été envoyé avec succèss!</h2>
+        <h2 className="text-success">{ language === "fr" ? "Votre message a été envoyé avec succèss!" : "Message sent!"}</h2>
       ) : (
         <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
           <div className="responsive-form">

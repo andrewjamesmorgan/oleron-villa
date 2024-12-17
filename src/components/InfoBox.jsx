@@ -22,7 +22,7 @@ export default function InfoBox({imageSrc, alt, action, route, body}) {
                       action={imageClicked}
         />
         <div
-          className='info-text'
+          className={route ? "info-text" : "info-text-no-link"}
           dangerouslySetInnerHTML={{ __html: body }}
           onClick={openRoute}
         />
