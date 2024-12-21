@@ -6,16 +6,16 @@ export default function LocationCell({action}) {
   const { language } = useContext(UserContext);
 
   const englishAlt = "Small Google Maps, showing Oleron Villa located on Ile d'Oleron off France's Atlantic coast";
-  const english = `
+  const english = (<>
     <h3>Location</h3>
     <p>See where Oléron Villa is located.</p>
-  `;
+  </>);
   
   const frenchAlt = "Petite carte Google Maps, montrant la villa d'Oléron située sur l'île d'Oléron, au large de la côte atlantique de la France";
-  const french = `
+  const french = (<>
     <h3>Situation</h3>
     <p>Pour situer l'île d'Oléron.</p>
-  `;
+  </>);
 
   return (
     <InfoBox 

@@ -6,16 +6,16 @@ export default function BookingCell({action}) {
   const { language } = useContext(UserContext);
 
   const englishAlt = 'Cartoon family wearing beach clothes smiling while looking at a calendar';
-  const english = `
+  const english = (<>
     <h3>Availability & bookings</h3>
     <p>See the current availability and prices - if you find what you need then use the on-line form to submit a booking request.</p>
-  `;
+  </>);
   
   const frenchAlt = "Famille de dessins animés portant des vêtements de plage souriant tout en regardant un calendrier";
-  const french = `
+  const french = (<>
     <h3>Disponibilités et réservations</h3>
     <p>Trouvez ici les disponibilités et tarifs. Pour réserver, vous pouvez envoyer votre demande en ligne.</p>
-  `;
+  </>);
 
   return (
     <InfoBox 

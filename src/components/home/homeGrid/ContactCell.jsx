@@ -6,16 +6,16 @@ export default function ContactCell({action}) {
   const { language } = useContext(UserContext);
 
   const englishAlt = '';
-  const english = `
+  const english = (<>
     <h3>Contact us</h3>
     <p>Use the on-line form to submit a question (or get in touch using any of the methods you see at the bottom of this page.</p>
-  `;
+  </>);
   
   const frenchAlt = "Nous contacter";
-  const french = `
+  const french = (<>
     <h3>Disponibilités et réservations</h3>
     <p>Utiliser le formulaire en ligne ci-dessous – ou les autres moyens mis à votre disposition en bas de la page.</p>
-  `;
+  </>);
 
   return (
     <InfoBox 

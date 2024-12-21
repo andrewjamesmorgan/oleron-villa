@@ -6,16 +6,16 @@ export default function ParkingCell({action}) {
   const { language } = useContext(UserContext);
 
   const englishAlt = 'Parking spaces outside the house';
-  const english = `
+  const english = (<>
     <h3>Parking</h3>
     <p>There's plenty of private parking. You can lock the gate for extra security.</p>
-  `;
+  </>);
   
   const frenchAlt = "Places de parking à l'extérieur de la maison";
-  const french = `
+  const french = (<>
     <h3>Parking</h3>
     <p>Il y a beaucoup de parking privé. Vous pouvez verrouiller le portail pour plus de sécurité.</p>
-  `;
+  </>);
 
   return (
     <InfoBox 
