@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="refresh" content="0; URL=/new-page" />
+    <script>
+      // Redirect mapping
+      const redirects = {
+        "/booking.php": "/#/bookings",
+        "/facilities.php": "/#/facilities",
+        "/outside_house.php": "/#/outside_house",
+        "/location.php": "/#/location",
+        "/booking": "/#/bookings",
+        "/facilities": "/#/facilities",
+        "/outside_house": "/#/outside_house",
+        "/location": "/#/location"
+      };
+
+      const currentPath = window.location.pathname;
+      console.log("Current path:", currentPath);
+
+      const redirect = redirects[currentPath];
+      if (redirect) {
+        window.location.replace(redirect);
+      } else {
+        // If no match, send to home or a fallback page
+        window.location.replace("/");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
