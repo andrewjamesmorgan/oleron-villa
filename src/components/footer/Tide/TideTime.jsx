@@ -17,7 +17,7 @@ export default function TideTime({ tide }) {
           {`${tide.time}: `}
           {`${tide.status === 'low' ? (
               language === 'fr' ? 'Marée basse' : 'Low tide') : (
-              language === 'fr' ? 'Marée basse' : 'High tide') 
+              language === 'fr' ? 'Marée haute' : 'High tide') 
             }`
           }
       </span>
