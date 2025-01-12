@@ -6,5 +6,6 @@ export let config = {
     lat: 45.8708907,
     lon: -1.2491633,
     mapId: '15019cba5d15b2ed',
-    location: 'Oléron Villa'
+    location: 'Oléron Villa',
+    tideURL: 'https://us-east-1.aws.data.mongodb-api.com/app/oleron-excil/endpoint/oleronTides'
 }

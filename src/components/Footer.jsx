@@ -5,10 +5,12 @@ import Error from './Error';
 import CurrentWeather from './footer/Weather/CurrentWeather';
 import WeekWeather from './footer/Weather/WeekWeather';
 import FooterContact from './footer/FooterContact';
+import Tide from './footer/Tide';
 
 export default function Footer() {
   const { language } = useContext(UserContext);
   const [weatherData, setWeatherData] = useState(null);
+  const [tideData, setTideData] = useState(null);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -19,7 +21,7 @@ export default function Footer() {
                 `https://api.openweathermap.org/data/3.0/onecall?lat=${config.lat}&lon=${config.lon}&lang={language}&units=metric&appid=${config.openWeatherKey}`
             );
             if (!response.ok) {
-                throw new Error(`Error: ${response.statusText}`);
+                throw new Error(`Error fetching weather data: ${response.statusText}`);
             }
             const data = await response.json();
             setWeatherData(data);
@@ -28,12 +30,32 @@ export default function Footer() {
             console.error(err.message || 'An unexpected error occurred.');
         }
     };
+
+    const fetchTideData = async () => {
+      setError(null);
+      try {
+          const response = await fetch(config.tideURL);
+          if (!response.ok) {
+              throw new Error(`Error fetching tide data: ${response.statusText}`);
+          }
+          const data = await response.json();
+          setTideData(data);
+      } catch (err) {
+          setError(err.message || 'An unexpected error occurred.');
+          console.error(err.message || 'An unexpected error occurred.');
+      }
+  };
+
     fetchWeatherData();
+    fetchTideData();
 }, [language]);
 
   return (
     <div className='responsive-grid footer-grid' id="footer">
         <FooterContact/>
+        {tideData && tideData.allTides && <Tide 
+          tideData={tideData.allTides}
+        />}
         {weatherData && <>
           <CurrentWeather 
             currentWeather={weatherData.current}
