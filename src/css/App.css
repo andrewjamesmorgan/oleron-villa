@@ -418,6 +418,7 @@ a:hover {
   text-align: left !important;
   max-width: 240px !important;
   min-width: 240px !important;
+  margin-left: 4px;
 }
 
 .tide-label-next {
