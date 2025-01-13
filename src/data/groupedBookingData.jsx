@@ -1,6 +1,6 @@
 export let groupedBookingData = [
-  {
-    "months": [
+  // {
+  //   "months": [
       // {
       //   "month": "July",
       //   "monthFR": "Juillet",
@@ -336,60 +336,60 @@ export let groupedBookingData = [
       //     }
       //   ]
       // },
-      {
-        "month": "December",
-        "monthFR": "Décembre",
-        "bookings": [
-          {
-            "_id": "67016b2d831c71f5a2733002",
-            "property": "Oleron Villa",
-            "start": "2024-12-07T00:00:00.000Z",
-            "end": "2024-12-14T00:00:00.000Z",
-            "booked": false,
-            "price": 1200,
-            "archived": false,
-            "year": 2024,
-            "month": 12
-          },
-          {
-            "_id": "67016b2d831c71f5a2733003",
-            "property": "Oleron Villa",
-            "start": "2024-12-14T00:00:00.000Z",
-            "end": "2024-12-21T00:00:00.000Z",
-            "booked": false,
-            "notes": "Abritel",
-            "price": 1200,
-            "archived": false,
-            "year": 2024,
-            "month": 12
-          },
-          {
-            "_id": "67016b2d831c71f5a2733004",
-            "property": "Oleron Villa",
-            "start": "2024-12-21T00:00:00.000Z",
-            "end": "2024-12-28T00:00:00.000Z",
-            "booked": true,
-            "notes": "Abritel",
-            "price": 1200,
-            "archived": false,
-            "year": 2024,
-            "month": 12
-          },
-          {
-            "property": "Oleron Villa",
-            "start": "2024-12-28T00:00:00.000Z",
-            "end": "2024-01-04T00:00:00.000Z",
-            "booked": true,
-            "price": 1200,
-            "archived": false,
-            "year": 2024,
-            "month": 12
-          }
-        ]
-      }
-    ],
-    "year": 2024
-  },
+  //     {
+  //       "month": "December",
+  //       "monthFR": "Décembre",
+  //       "bookings": [
+  //         {
+  //           "_id": "67016b2d831c71f5a2733002",
+  //           "property": "Oleron Villa",
+  //           "start": "2024-12-07T00:00:00.000Z",
+  //           "end": "2024-12-14T00:00:00.000Z",
+  //           "booked": false,
+  //           "price": 1200,
+  //           "archived": false,
+  //           "year": 2024,
+  //           "month": 12
+  //         },
+  //         {
+  //           "_id": "67016b2d831c71f5a2733003",
+  //           "property": "Oleron Villa",
+  //           "start": "2024-12-14T00:00:00.000Z",
+  //           "end": "2024-12-21T00:00:00.000Z",
+  //           "booked": false,
+  //           "notes": "Abritel",
+  //           "price": 1200,
+  //           "archived": false,
+  //           "year": 2024,
+  //           "month": 12
+  //         },
+  //         {
+  //           "_id": "67016b2d831c71f5a2733004",
+  //           "property": "Oleron Villa",
+  //           "start": "2024-12-21T00:00:00.000Z",
+  //           "end": "2024-12-28T00:00:00.000Z",
+  //           "booked": true,
+  //           "notes": "Abritel",
+  //           "price": 1200,
+  //           "archived": false,
+  //           "year": 2024,
+  //           "month": 12
+  //         },
+  //         {
+  //           "property": "Oleron Villa",
+  //           "start": "2024-12-28T00:00:00.000Z",
+  //           "end": "2024-01-04T00:00:00.000Z",
+  //           "booked": true,
+  //           "price": 1200,
+  //           "archived": false,
+  //           "year": 2024,
+  //           "month": 12
+  //         }
+  //       ]
+  //     }
+  //   ],
+  //   "year": 2024
+  // },
   {
     "months": [
       {
