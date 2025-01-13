@@ -32,7 +32,7 @@ export default function LocationHead() {
           property="og:description"
           content="Oléron Villa is located on the picturesque Île d'Oléron, near sandy beaches, lush forests, and charming villages. Perfect for a relaxing or adventurous holiday."
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
+        <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
         <meta property="og:url" content="https://oleronvilla.com/#/location" /> {/* Replace with your site URL */}
         <meta property="og:locale" content="en_US" />
 

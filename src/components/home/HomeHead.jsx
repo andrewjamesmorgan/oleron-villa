@@ -32,8 +32,8 @@ export default function HomeHead() {
           property="og:description"
           content="Discover Oléron Villa, a stunning vacation home on the Île d'Oléron. Relax near sandy beaches and explore local attractions."
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="https://oleronvilla.com" /> {/* Replace with your site URL */}
+        <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
+        <meta property="og:url" content="https://oleronvilla.com" />
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter */}

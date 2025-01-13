@@ -32,8 +32,8 @@ export default function BookingsHead() {
           property="og:description"
           content="Enjoy an unforgettable stay on the Île d'Oléron in our vacation home. Just steps from beaches and local attractions. Book now!"
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="https://oleronvilla.com/#/bookings" /> {/* Replace with your site URL */}
+        <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
+        <meta property="og:url" content="https://oleronvilla.com/#/bookings" /> 
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter */}

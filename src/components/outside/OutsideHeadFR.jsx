@@ -32,7 +32,7 @@ export default function OutsideHeadFR() {
           property="og:description"
           content="Découvrez les espaces extérieurs de la Villa Oléron, avec une grande terrasse, un barbecue, un jardin et un solarium. Idéal pour profiter du soleil et des repas en plein air sur l'Île d'Oléron."
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
+        <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
         <meta property="og:url" content="https://oleronvilla.com/#/outside_house-fr" /> {/* Remplacez par l'URL de votre site */}
         <meta property="og:locale" content="fr_FR" />
 

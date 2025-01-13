@@ -32,7 +32,7 @@ export default function LocationHeadFR() {
           property="og:description"
           content="La Villa Oléron est située sur la pittoresque Île d'Oléron, à proximité des plages de sable, des forêts verdoyantes et des villages charmants. Idéal pour des vacances relaxantes ou aventureuses."
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
+        <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
         <meta property="og:url" content="https://oleronvilla.com/#/location-fr" /> {/* Remplacez par l'URL de votre page */}
         <meta property="og:locale" content="fr_FR" />
 

@@ -32,8 +32,8 @@ export default function ContactHead() {
           property="og:description"
           content="Reach out to Oléron Villa with your inquiries or questions about our vacation home. Conveniently located near the best attractions on Île d'Oléron."
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="http://oleronvilla.com/#/contact" /> {/* Replace with your site URL */}
+        <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
+        <meta property="og:url" content="http://oleronvilla.com/#/contact" /> 
         <meta property="og:locale" content="en_US" />
 
         {/* Twitter */}

@@ -32,8 +32,8 @@ export default function HomeHeadFR() {
           property="og:description"
           content="Découvrez la Villa Oléron, une magnifique maison de vacances sur l'Île d'Oléron. Détendez-vous près des plages de sable et explorez les attractions locales."
         />
-        <meta property="og:image" content="https://oleronvilla.com/Oleron_Villa_OG.jpg" />
-        <meta property="og:url" content="https://oleronvilla.com/#/fr" /> {/* Remplacez par l'URL de votre site */}
+        <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
+        <meta property="og:url" content="https://oleronvilla.com/#/fr" /> 
         <meta property="og:locale" content="fr_FR" />
 
         {/* Twitter */}
