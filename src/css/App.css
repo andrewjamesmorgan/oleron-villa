@@ -340,6 +340,7 @@ div.footer-column {
 #weather-current-summary-container {
   display: flex;
   margin-top: 18px;
+  margin-left: 10px;
   /* align-items: center;  */
 }
 

@@ -14,6 +14,7 @@ export default function CurrentWeather({currentWeather, dailyWeather}) {
     <div className="current-weather" id="footer-current-weather">
       <div>
         <WeatherIcon 
+          className="current-weather-icon"
           icon={currentWeather.weather[0].icon}
           description={currentWeather.weather[0].description}
         />
