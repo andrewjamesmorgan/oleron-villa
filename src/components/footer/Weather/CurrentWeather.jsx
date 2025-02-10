@@ -10,6 +10,14 @@ export default function CurrentWeather({currentWeather, dailyWeather}) {
     return `${hours}:${minutes}`;
   }
 
+  function tempId(){
+    if (["10d", "10n", "09d", "11d", "12n"].includes(currentWeather.weather[0].icon)) {
+      return "current-temp-rainy";
+    } else {  
+      return "current-temp";
+    }
+  }
+
   return (
     <div className="current-weather" id="footer-current-weather">
       <div>
@@ -18,7 +26,7 @@ export default function CurrentWeather({currentWeather, dailyWeather}) {
           icon={currentWeather.weather[0].icon}
           description={currentWeather.weather[0].description}
         />
-        <span id="current-temp" >
+        <span id={tempId()} >
           <Temp temp={currentWeather.temp} suffix="true"/>
         </span>
       </div>

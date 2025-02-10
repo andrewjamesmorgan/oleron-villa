@@ -368,6 +368,11 @@ div.footer-column {
   top: -12px;
 }
 
+#current-temp-rainy {
+  position: relative;
+  top: 0px;
+}
+
 span.temp-small {
   font-size: 12px;
 }
