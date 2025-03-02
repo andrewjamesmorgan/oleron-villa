@@ -39,7 +39,10 @@ export default function Footer() {
               throw new Error(`Error fetching tide data: ${response.statusText}`);
           }
           const data = await response.json();
-          setTideData(data);
+          if (!data.tides) {
+              throw new Error('Error fetching tide data: invalid response (no tides element).');
+          }
+          setTideData(data.tides);
       } catch (err) {
           setError(err.message || 'An unexpected error occurred.');
           console.error(err.message || 'An unexpected error occurred.');
