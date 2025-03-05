@@ -16,7 +16,7 @@ export default function HomeIntro() {
         />
       </div>
       <div className='responsive-text'>
-        { language === "en" && <h2>Welcome to Oléron Villa, a luxury, well equipped holiday home on Île d'Oléron - just a few minutes' walk through the woods from glorious family & surf beaches.</h2> }
+        { language === "en" && <h2>Welcome to Oléron Villa, a luxury, well equipped holiday home on Île d'Oléron - just a few minutes' walk through the woods from glorious family & surf beaches</h2> }
         { language === "fr" && <h2>Bienvenue sur Oléron Villa, une maison de vacances haut de gamme et très bien équipée sur la belle île d'Oléron réputée pour sa côte sauvage et ses plages de sable fin à quelques minutes de marche à travers la forêt.</h2> }
         { language === "en" &&
           <div>
