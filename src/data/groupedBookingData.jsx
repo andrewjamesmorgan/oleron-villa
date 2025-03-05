@@ -868,7 +868,7 @@ export let groupedBookingData = [
             "_id": "67016b2d831c71f5a2733028",
             "property": "Oleron Villa",
             "start": "2025-09-06T00:00:00.000Z",
-            "end": "2025-09-13T00:00:00.000Z",
+            "end": "2025-09-14T00:00:00.000Z",
             "booked": true,
             "price": 1200,
             "archived": false,
@@ -878,10 +878,10 @@ export let groupedBookingData = [
           {
             "_id": "67016b2d831c71f5a2733029",
             "property": "Oleron Villa",
-            "start": "2025-09-13T00:00:00.000Z",
+            "start": "2025-09-14T00:00:00.000Z",
             "end": "2025-09-20T00:00:00.000Z",
             "booked": false,
-            "price": 1200,
+            "price": 1000,
             "archived": false,
             "year": 2025,
             "month": 9
