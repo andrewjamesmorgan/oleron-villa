@@ -430,6 +430,57 @@ a:hover {
 .tide-label-next {
   font-weight: bold;
 }
+
+div.bookings-info {
+  margin-top: 20px;
+}
+
+.week-info {
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-width: 2px;
+  box-shadow: 2px 2px 8px var(--dark-translucent);
+  padding: 10px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-radius 0.25s ease;
+}
+
+.week-info p {
+  margin: 5px 0; /* Adjust the vertical space between <p> elements */
+}
+
+.week-info.past {
+  background-color: var(--dark-accent);
+  color: var(--light-one);
+}
+
+.week-info.present {
+  background-color: var(--light-highlight);
+  color: var(--light-two);
+  border-color: var(--dark-translucent);
+  box-shadow: 2px 2px 22px var(--dark-translucent);
+  border-width: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.week-info.available {
+  background-color: var(--dark-highlight);
+  color: var(--light-one);
+}
+
+.week-info.booked {
+  background-color: var(--error-background);
+  color: var(--error-color);
+}
+
+.week-info:hover {
+  transform: scale(1.1);
+  border-radius: 50px;
+  box-shadow: 2px 2px 8px 4px var(--dark-translucent);
+  cursor: pointer;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
