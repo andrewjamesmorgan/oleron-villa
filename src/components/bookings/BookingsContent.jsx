@@ -78,7 +78,7 @@ export default function BookingsContent() {
           onSelect={includeInList} 
         />
       ))}
-      <div className="container">
+      <div>
         {!isAdmin && <BookingsForm weeks={weeksToBook}/> }
         {isAdmin && <AdminBookingsForm refresh={fetchWeeks} />}
       </div>
