@@ -35,8 +35,8 @@ export default function WeekFilter({ applyFilter }) {
   }
 
   useEffect(() => {
-    applyFilter(filter);
-  }, [filter]);
+    applyFilter(filter, );
+  }, [filter, applyFilter]);
 
   return (
     <>
