@@ -18,6 +18,7 @@ import FacilitiesFR from './pages/FacilitiesFR';
 import Location from './pages/Location';
 import LocationFR from './pages/LocationFR';
 import Login from './pages/Login';
+import Logout from './pages/Logout';
 
 export const UserContext = createContext(null);
 
@@ -48,6 +49,7 @@ function App() {
             <Route path="location" element={<Location />} />
             <Route path="location-fr" element={<LocationFR />} />
             <Route path="login" element={<Login />} />
+            <Route path="logout" element={<Logout />} />
             <Route path="*" element={<Home />} />
             </Route>
           </Routes>

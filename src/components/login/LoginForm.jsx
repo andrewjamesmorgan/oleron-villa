@@ -34,6 +34,7 @@ export default function LoginForm() {
         localStorage.setItem("ol-username", object.username);
         localStorage.setItem("ol-password", object.password);
         navigate('/');
+        window.location.reload();
       } else {
         setErrorMessage(`Failed to log in: ${result.message}`);
       }

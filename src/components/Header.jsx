@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
 import { UserContext } from '../App';
 import '../css/topnav.css';
@@ -8,6 +8,9 @@ export default function Header() {
   const { language } = useContext(UserContext);
   const pathName = useLocation().pathname;
   const [showingBurger, setShowingBurger] = useState(false);
+  const [username] = useState(localStorage.getItem("ol-username"));
+  const [password] = useState(localStorage.getItem("ol-password"));
+  const [isAdmin, setIsAdmin] = useState(false);
 
   function selectMenu() {
     setShowingBurger(!showingBurger);
@@ -21,6 +24,10 @@ export default function Header() {
       setShowingBurger(false);
     }
   }
+
+  useEffect(() => {
+    setIsAdmin(username && password);
+  }, [username, password]);
 
   return (
     <div className={showingBurger ? "topnav responsive" : "topnav"} id="myTopnav">
@@ -46,6 +53,9 @@ export default function Header() {
           <Link to="/contact"
             onClick={hideBurgerMenu}
             className={pathName === "/contact" ? "active" : "not-active"}>Contact us</Link>
+          {isAdmin && <Link to="/logout"
+            onClick={hideBurgerMenu}
+            className={pathName === "/logout" ? "active" : "not-active"}>Log out</Link>}
           <LanguageButton buttonLanguage={"fr"}/>
           {/* eslint-disable-next-line */}
           <a href="#" className="icon" onClick={selectMenu}>
@@ -74,6 +84,9 @@ export default function Header() {
           <Link to="/contact-fr"
             onClick={hideBurgerMenu}
             className={pathName === "/contact-fr" ? "active" : "not-active"}>Nous contacter</Link>
+          {isAdmin && <Link to="/logout"
+            onClick={hideBurgerMenu}
+            className={pathName === "/login" ? "active" : "not-active"}>Log out</Link>}
           <LanguageButton buttonLanguage={"en"}/>
           {/* eslint-disable-next-line */}
           <a href="#" className="icon" onClick={selectMenu}>
