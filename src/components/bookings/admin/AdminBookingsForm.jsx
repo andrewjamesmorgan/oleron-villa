@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
 import { config } from '../../../config';
+import WeekFilter from './WeekFilter';
 import ExistingWeeks from './ExistingWeeks';
 
 export default function AdminBookingsForm({ refresh }) {
@@ -9,49 +10,20 @@ export default function AdminBookingsForm({ refresh }) {
     register,
     handleSubmit,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-    reset,
+    // reset,
   } = useForm();
 
   const { language } = useContext(UserContext);
   const [errorMessage, setErrorMessage] = useState(null);
-  const [fromDate, setFromDate] = useState(null);
-  const [toDate, setToDate] = useState(null);
-  const [justBookings, setJustBookings] = useState(false);
+  const [filterQuery, setFilterQuery] = useState({
+    from: null,
+    to: null,
+    justBookings: false
+  });
+  // const [fromDate, setFromDate] = useState(null);
+  // const [toDate, setToDate] = useState(null);
+  // const [justBookings, setJustBookings] = useState(false);
   const [bookings, setBookings] = useState(null);
-
-  async function fetchBookings() {
-    const username = localStorage.getItem("ol-username");
-    const password = localStorage.getItem("ol-password");
-    let url = config.getBookingsURL;
-    const body = {
-      username,
-      password
-    };
-    if (fromDate) {
-      url += `fromDate=${fromDate}`;
-    }
-    if (toDate) {
-      url += `toDate=${toDate}`;
-    }
-    if (justBookings) {
-      url += `justBookings=${justBookings}`;
-    }
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        body: JSON.stringify(body)
-      });
-      const data = await response.json();
-      if (response.status === 200) {
-        console.log("Fetched bookings:", data);
-        setBookings(data.bookings);
-      } else {
-        console.error(`Failed to fetch bookings: ${data.message}`);
-      }
-    } catch (error) {
-      console.error(`Failed to fetch bookings: ${error.message}`);
-    }
-  }
 
   function selectWeek(week) {
     // TODO: Populate form with week data
@@ -102,11 +74,46 @@ export default function AdminBookingsForm({ refresh }) {
   };
 
   useEffect(() => {
+    async function fetchBookings() {
+      const username = localStorage.getItem("ol-username");
+      const password = localStorage.getItem("ol-password");
+      let url = config.getBookingsURL;
+      const body = {
+        username,
+        password
+      };
+      if (filterQuery.from) {
+        url += `&fromDate=${filterQuery.from}`;
+      }
+      if (filterQuery.to) {
+        url += `&toDate=${filterQuery.to}`;
+      }
+      if (filterQuery.justBookings) {
+        url += `&justBookings=${filterQuery.justBookings}`;
+      }
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(body)
+        });
+        const data = await response.json();
+        if (response.status === 200) {
+          console.log("Fetched bookings:", data);
+          setBookings(data.bookings);
+        } else {
+          console.error(`Failed to fetch bookings: ${data.message}`);
+        }
+      } catch (error) {
+        console.error(`Failed to fetch bookings: ${error.message}`);
+      }
+    }
+
     fetchBookings();
-  }, []);
+  }, [filterQuery]);
 
   return (
     <>
+      <WeekFilter applyFilter={setFilterQuery}/>
       { bookings && <ExistingWeeks weeks={bookings} selectWeek={selectWeek} /> }
       <div className='space-above'>
         {isSubmitSuccessful && !errorMessage ? (
