@@ -35,7 +35,8 @@ export default function AdminBookingsForm({ refresh }) {
     return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v !== ''));
   };
 
-  // Memoize fetchBookings using useCallback
+  // Memoize fetchBookings using useCallback. This is so that it can be
+  // used as a dependency in useEffect without causing an infinite loop.
   const fetchBookings = useCallback(async () => {
     const username = localStorage.getItem("ol-username");
     const password = localStorage.getItem("ol-password");
@@ -143,93 +144,89 @@ export default function AdminBookingsForm({ refresh }) {
       {/* Form */}
       <div className='space-above'>
         {week && <div className='form-container'>
-          {isSubmitSuccessful && !errorMessage ? (
-            <h2 className="text-success">{"Week updated"}</h2>
-          ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
-              <div className="responsive-form">
-                <div className="mb-3 med-field narrow-field">
-                  <label htmlFor="start" className="form-label">Start Date</label>
-                  <br/>
-                  <ReactDatePicker
-                    id="start"
-                    selected={start}
-                    onChange={(date) => setStart(date)}
-                    dateFormat="yyyy-MM-dd"
-                    className="form-control centered-input"
-                    placeholderText="Select start date"
-                  />
-                </div>
-                <div className="mb-3 med-field narrow-field">
-                  <label htmlFor="end" className="form-label">End Date</label>
-                  <br/>
-                  <ReactDatePicker
-                    id="end"
-                    selected={end}
-                    onChange={(date) => setEnd(date)}
-                    dateFormat="yyyy-MM-dd"
-                    className="form-control centered-input"
-                    placeholderText="Select end date"
-                  />
-                </div>
-                <div className="mb-3 med-field narrow-field">
-                  <label htmlFor="price" className="form-label">Price (€)</label>
-                  <br />
-                  <input
-                    type="number"
-                    id="price"
-                    className="form-control centered-input"
-                    {...register('price', {
-                      required: "Price is required",
-                      valueAsNumber: true,
-                      validate: (value) => Number.isInteger(value) || "Price must be an integer",
-                    })}
-                  />
-                  {errors.price && <div className="invalid-feedback">{errors.price.message}</div>}
-                </div>
-                <div className="mb-3 med-field very-narrow-field">
-                  <label htmlFor="booked" className="form-label">Booked</label>
-                  <br />
-                  <input
-                    type="checkbox"
-                    id="booked"
-                    className="form-check-input"
-                    {...register('booked')}
-                    checked={!!week?.booked}
-                    onChange={(e) => setValue('booked', e.target.checked)}
-                  />
-                </div>
-                <div className="mb-3 med-field narrow-field">
-                  <label htmlFor="source" className="form-label">Source</label>
-                  <br />
-                  <select
-                    id="source"
-                    className="form-control narrow-field centered-input"
-                    {...register('source')}
-                  >
-                    <option value="">Select source</option>
-                    <option value="Direct">Direct</option>
-                    <option value="Airbnb">Airbnb</option>
-                    <option value="Abritel">Abritel</option>
-                  </select>
-                </div>
-              </div>
-              <div className="mb-3">
-                <label htmlFor="notes" className="form-label">Notes</label>
-                <textarea
-                  id="notes"
-                  rows={5}
-                  className={`form-control ${errors.message ? 'is-invalid' : ''}`}
-                  {...register('notes')}
+          <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
+            <div className="responsive-form">
+              <div className="mb-3 med-field narrow-field">
+                <label htmlFor="start" className="form-label">Start Date</label>
+                <br/>
+                <ReactDatePicker
+                  id="start"
+                  selected={start}
+                  onChange={(date) => setStart(date)}
+                  dateFormat="yyyy-MM-dd"
+                  className="form-control centered-input"
+                  placeholderText="Select start date"
                 />
-                {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
               </div>
-              <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
-                {isSubmitting ? "Updating..." : "Update week"}
-              </button>
-              {errorMessage && <div className='error-message'>{errorMessage}</div>}
-            </form>
-          )}
+              <div className="mb-3 med-field narrow-field">
+                <label htmlFor="end" className="form-label">End Date</label>
+                <br/>
+                <ReactDatePicker
+                  id="end"
+                  selected={end}
+                  onChange={(date) => setEnd(date)}
+                  dateFormat="yyyy-MM-dd"
+                  className="form-control centered-input"
+                  placeholderText="Select end date"
+                />
+              </div>
+              <div className="mb-3 med-field narrow-field">
+                <label htmlFor="price" className="form-label">Price (€)</label>
+                <br />
+                <input
+                  type="number"
+                  id="price"
+                  className="form-control centered-input"
+                  {...register('price', {
+                    required: "Price is required",
+                    valueAsNumber: true,
+                    validate: (value) => Number.isInteger(value) || "Price must be an integer",
+                  })}
+                />
+                {errors.price && <div className="invalid-feedback">{errors.price.message}</div>}
+              </div>
+              <div className="mb-3 med-field very-narrow-field">
+                <label htmlFor="booked" className="form-label">Booked</label>
+                <br />
+                <input
+                  type="checkbox"
+                  id="booked"
+                  className="form-check-input"
+                  {...register('booked')}
+                  checked={!!week?.booked}
+                  onChange={(e) => setValue('booked', e.target.checked)}
+                />
+              </div>
+              <div className="mb-3 med-field narrow-field">
+                <label htmlFor="source" className="form-label">Source</label>
+                <br />
+                <select
+                  id="source"
+                  className="form-control narrow-field centered-input"
+                  {...register('source')}
+                >
+                  <option value="">Select source</option>
+                  <option value="Direct">Direct</option>
+                  <option value="Airbnb">Airbnb</option>
+                  <option value="Abritel">Abritel</option>
+                </select>
+              </div>
+            </div>
+            <div className="mb-3">
+              <label htmlFor="notes" className="form-label">Notes</label>
+              <textarea
+                id="notes"
+                rows={5}
+                className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+                {...register('notes')}
+              />
+              {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
+            </div>
+            <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
+              {isSubmitting ? "Updating..." : "Update week"}
+            </button>
+            {errorMessage && <div className='error-message'>{errorMessage}</div>}
+          </form>
         </div>}
       </div>
     </>
