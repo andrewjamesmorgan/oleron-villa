@@ -10,7 +10,7 @@ export default function AdminBookingsForm({ refresh }) {
     register,
     handleSubmit,
     setValue,
-    formState: { errors, isSubmitting, isSubmitSuccessful },
+    formState: { errors, isSubmitting },
     reset
   } = useForm();
 
