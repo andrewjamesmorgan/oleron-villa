@@ -45,7 +45,7 @@ export default function WeekFilter({ applyFilter }) {
         <form className="needs-validation" noValidate>
           <div className="responsive-form">
             {/* Start Date */}
-            <div className="mb-3 med-field">
+            <div className="mb-3 med-field narrow-field">
               <label htmlFor="startDate" className="form-label">From Date</label>
               <br/>
               <ReactDatePicker
@@ -53,12 +53,12 @@ export default function WeekFilter({ applyFilter }) {
                 selected={filter.from}
                 onChange={onFromDate}
                 dateFormat="yyyy-MM-dd"
-                className="form-control"
+                className="form-control centered-input"
                 placeholderText="Select from date"
               />
             </div>
             {/* End Date */}
-            <div className="mb-3 med-field">
+            <div className="mb-3 med-field narrow-field">
               <label htmlFor="endDate" className="form-label">To Date</label>
               <br/>
               <ReactDatePicker
@@ -66,12 +66,12 @@ export default function WeekFilter({ applyFilter }) {
                 selected={filter.to}
                 onChange={onToDate}
                 dateFormat="yyyy-MM-dd"
-                className="form-control"
+                className="form-control centered-input narr"
                 placeholderText="Select to date"
               />
             </div>
             {/* Just Bookings */}
-            <div className="mb-3 med-field">
+            <div className="mb-3 med-field narrow-field">
               <label htmlFor="justBookings" className="form-label">Just Bookings</label>
               <br/>
               <input
