@@ -481,6 +481,23 @@ div.bookings-info {
   cursor: pointer;
 }
 
+.form-container {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.narrow-field {
+  max-width: 150px; /* Adjust the width as needed */
+}
+
+.very-narrow-field {
+  max-width: 80px; /* Adjust the width as needed */
+}
+
+.centered-input {
+  text-align: center;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
@@ -502,6 +519,11 @@ div.bookings-info {
     background-color: var(--light-two);
     padding-left: 5px;
     padding-right: 5px;
+  }
+
+  .form-container {
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 

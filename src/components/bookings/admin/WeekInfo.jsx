@@ -21,11 +21,13 @@ export default function WeekInfo({ week }) {
         <p><b>{formatDate(week.start)} → {formatDate(week.end)}</b></p>
         <p>
           {week.name && <span>{week.name}</span>}
-          {week.source && <span> ({week.source})</span>}
           {week.price && <span> €{week.price}</span>}
         </p>
         {week.email && <p> &lt;{week.email}&gt;</p>}
-        <p>{week.booked ? 'Booked' : 'Available'}</p>
+        <p>
+          {week.booked ? 'Booked' : 'Available'} 
+          {week.source && <span> ({week.source})</span>}
+        </p>
         {week.notes && <p><i>— {week.notes} —</i></p>}
       </div>
     </>

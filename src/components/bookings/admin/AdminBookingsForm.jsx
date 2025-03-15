@@ -1,6 +1,6 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useForm } from 'react-hook-form';
-import { UserContext } from '../../../App';
+import ReactDatePicker from 'react-datepicker';
 import { config } from '../../../config';
 import WeekFilter from './WeekFilter';
 import ExistingWeeks from './ExistingWeeks';
@@ -9,188 +9,228 @@ export default function AdminBookingsForm({ refresh }) {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors, isSubmitting, isSubmitSuccessful },
-    // reset,
+    reset
   } = useForm();
 
-  const { language } = useContext(UserContext);
   const [errorMessage, setErrorMessage] = useState(null);
   const [filterQuery, setFilterQuery] = useState({
     from: null,
     to: null,
     justBookings: false
   });
-  // const [fromDate, setFromDate] = useState(null);
-  // const [toDate, setToDate] = useState(null);
-  // const [justBookings, setJustBookings] = useState(false);
   const [bookings, setBookings] = useState(null);
+  const [week, setWeek] = useState(null);
+  const [start, setStart] = useState(null);
+  const [end, setEnd] = useState(null);
 
   function selectWeek(week) {
-    // TODO: Populate form with week data
+    setWeek(week);
+    setStart(week.start);
+    setEnd(week.end);
+  }
+
+  const removeEmptyFields = (obj) => {
+    return Object.fromEntries(Object.entries(obj).filter(([_, v]) => v != null && v !== ''));
   };
+
+  // Memoize fetchBookings using useCallback
+  const fetchBookings = useCallback(async () => {
+    const username = localStorage.getItem("ol-username");
+    const password = localStorage.getItem("ol-password");
+    let url = config.getBookingsURL;
+    const body = {
+      username,
+      password
+    };
+    if (filterQuery.from) {
+      url += `&fromDate=${filterQuery.from}`;
+    }
+    if (filterQuery.to) {
+      url += `&toDate=${filterQuery.to}`;
+    }
+    if (filterQuery.justBookings) {
+      url += `&justBookings=${filterQuery.justBookings}`;
+    }
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        body: JSON.stringify(body)
+      });
+      const data = await response.json();
+      if (response.status === 200) {
+        console.log("Fetched bookings:", data);
+        setBookings(data.bookings);
+      } else {
+        console.error(`Failed to fetch bookings: ${data.message}`);
+      }
+    } catch (error) {
+      console.error(`Failed to fetch bookings: ${error.message}`);
+    }
+  }, [filterQuery]); // Dependencies: filterQuery
 
   const onSubmit = async (data) => {
     setErrorMessage(null);
-  //   console.log(`weeks contains ${weeks.length} elements.`);
-  //   if (weeks.length === 0) {
-  //     setErrorMessage(language === "fr" ? "Vous devez sélectionner une ou plusieurs semaines"  : "You must select one or more weeks");
-  //     return;
-  //   }
 
-  //   const formData = new FormData();
+    if (!start || !end) {
+      setErrorMessage("Start and end dates are required.");
+      return;
+    }
+    if (start >= end) {
+      setErrorMessage("End date must be after start date.");
+      return;
+    }
 
-  //   formData.append("access_key", config.formKey);
+    let weekToStore = {
+      ...week,
+      start,
+      end,
+      booked: data.booked,
+      notes: data.notes,
+      price: data.price,
+      source: data.source
+    };
 
-  //   Object.entries(data).forEach(([key, value]) => {
-  //     formData.append(key, value);
-  //   });
-  //   formData.append('dates', weeks.join('\r\n'));
-  //   let object = Object.fromEntries(formData);
-  //   object.subject = `Booking request from ${object.name ? object.name : "unknown"} for Oléron Villa`;
-  //   object.redirect = "https://www.oleronvilla.com/";
-  //   const json = JSON.stringify(object);
+    weekToStore = removeEmptyFields(weekToStore);
 
-  //   console.log(`Submit`);
-  //   console.log(`language: ${language}`);
+    const json = JSON.stringify({
+      username: localStorage.getItem("ol-username"),
+      password: localStorage.getItem("ol-password"),
+      booking: weekToStore
+    });
 
-  //   try {
-  //     const res = await fetch("https://api.web3forms.com/submit", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         Accept: "application/json",
-  //       },
-  //       body: json,
-  //     });
-  //     const result = await res.json();
-  //     if (res.ok && result.success) {
-  //       reset(); // Reset the form on success
-  //     } else {
-  //       setErrorMessage(`${language === "fr" ? "Échec de l'envoi du message" : "Failed to send message"} : ${result.message}`);
-  //     }
-  //   } catch (error) {
-  //     setErrorMessage(`${language === "fr" ? "Échec de l'envoi du message" : "Failed to send message"} : ${error.message}`);
-  //   }
+    console.log(`Submit`, json);
+
+    try {
+      const res = await fetch(config.updateBookingURL, {
+        method: "POST",
+        body: json,
+      });
+      const result = await res.json();
+      if (res.ok) {
+        reset();
+        setStart(null);
+        setEnd(null);
+        await fetchBookings(); // Call fetchBookings here
+        refresh();
+      } else {
+        setErrorMessage(`Failed to update booking: ${result.message}`);
+      }
+    } catch (error) {
+      setErrorMessage(`Failed to update booking: ${error.message}`);
+    }
   };
 
   useEffect(() => {
-    async function fetchBookings() {
-      const username = localStorage.getItem("ol-username");
-      const password = localStorage.getItem("ol-password");
-      let url = config.getBookingsURL;
-      const body = {
-        username,
-        password
-      };
-      if (filterQuery.from) {
-        url += `&fromDate=${filterQuery.from}`;
-      }
-      if (filterQuery.to) {
-        url += `&toDate=${filterQuery.to}`;
-      }
-      if (filterQuery.justBookings) {
-        url += `&justBookings=${filterQuery.justBookings}`;
-      }
-      try {
-        const response = await fetch(url, {
-          method: "POST",
-          body: JSON.stringify(body)
-        });
-        const data = await response.json();
-        if (response.status === 200) {
-          console.log("Fetched bookings:", data);
-          setBookings(data.bookings);
-        } else {
-          console.error(`Failed to fetch bookings: ${data.message}`);
-        }
-      } catch (error) {
-        console.error(`Failed to fetch bookings: ${error.message}`);
-      }
+    if (week) {
+      setValue('booked', week.booked);
+      setValue('notes', week.notes);
+      setValue('price', week.price);
+      setValue('source', week.source);
     }
+  }, [week, setValue]);
 
-    fetchBookings();
-  }, [filterQuery]);
+  useEffect(() => {
+    fetchBookings(); // Call the memoized fetchBookings function
+  }, [fetchBookings]);
 
   return (
     <>
       <WeekFilter applyFilter={setFilterQuery}/>
       { bookings && <ExistingWeeks weeks={bookings} selectWeek={selectWeek} /> }
+      
+      {/* Form */}
       <div className='space-above'>
-        {isSubmitSuccessful && !errorMessage ? (
-          <h2 className="text-success">{language === "fr" ? "Votre message a été envoyé avec succèss!"
-            : "Your message has been sent!"}</h2>
-        ) : (
-          <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
-            <div className="responsive-form">
-              {/* Email Field */}
-              <div className="med-field">
-                <label htmlFor="email" className="form-label">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
-                  {...register('email', {
-                    required: `${language === "fr" ? "Veuillez entrer une adresse email" : "Email address required"}`,
-                    pattern: {
-                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                      message: `${language === "fr" ? "Veuillez entrer une adresse email" : "Email address required"}`,
-                    },
-                  })}
-                />
-                {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
+        {week && <div className='form-container'>
+          {isSubmitSuccessful && !errorMessage ? (
+            <h2 className="text-success">{"Week updated"}</h2>
+          ) : (
+            <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
+              <div className="responsive-form">
+                <div className="mb-3 med-field narrow-field">
+                  <label htmlFor="start" className="form-label">Start Date</label>
+                  <br/>
+                  <ReactDatePicker
+                    id="start"
+                    selected={start}
+                    onChange={(date) => setStart(date)}
+                    dateFormat="yyyy-MM-dd"
+                    className="form-control centered-input"
+                    placeholderText="Select start date"
+                  />
+                </div>
+                <div className="mb-3 med-field narrow-field">
+                  <label htmlFor="end" className="form-label">End Date</label>
+                  <br/>
+                  <ReactDatePicker
+                    id="end"
+                    selected={end}
+                    onChange={(date) => setEnd(date)}
+                    dateFormat="yyyy-MM-dd"
+                    className="form-control centered-input"
+                    placeholderText="Select end date"
+                  />
+                </div>
+                <div className="mb-3 med-field narrow-field">
+                  <label htmlFor="price" className="form-label">Price (€)</label>
+                  <br />
+                  <input
+                    type="number"
+                    id="price"
+                    className="form-control centered-input"
+                    {...register('price', {
+                      required: "Price is required",
+                      valueAsNumber: true,
+                      validate: (value) => Number.isInteger(value) || "Price must be an integer",
+                    })}
+                  />
+                  {errors.price && <div className="invalid-feedback">{errors.price.message}</div>}
+                </div>
+                <div className="mb-3 med-field very-narrow-field">
+                  <label htmlFor="booked" className="form-label">Booked</label>
+                  <br />
+                  <input
+                    type="checkbox"
+                    id="booked"
+                    className="form-check-input"
+                    {...register('booked')}
+                    checked={!!week?.booked}
+                    onChange={(e) => setValue('booked', e.target.checked)}
+                  />
+                </div>
+                <div className="mb-3 med-field narrow-field">
+                  <label htmlFor="source" className="form-label">Source</label>
+                  <br />
+                  <select
+                    id="source"
+                    className="form-control narrow-field centered-input"
+                    {...register('source')}
+                  >
+                    <option value="">Select source</option>
+                    <option value="Direct">Direct</option>
+                    <option value="Airbnb">Airbnb</option>
+                    <option value="Abritel">Abritel</option>
+                  </select>
+                </div>
               </div>
-              {/* Optional Phone Number Field */}
-              <div className="mb-3 med-field">
-                <label htmlFor="phone" className="form-label">{language === "fr" ? "Numéro de téléphone (facultatif)" : "Phone number (optional)"}</label>
-                <input
-                  id="phone"
-                  type="tel"
-                  className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
-                  {...register('phone', {
-                    pattern: {
-                      value: /^\+?[0-9]{7,15}$/,
-                      message: `${language === "fr" ? "Veuillez entrer un numéro de téléphone valide" : "Phone number needs to be in a valid form"}`,
-                    },
-                  })}
+              <div className="mb-3">
+                <label htmlFor="notes" className="form-label">Notes</label>
+                <textarea
+                  id="notes"
+                  rows={5}
+                  className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+                  {...register('notes')}
                 />
-                {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}
+                {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
               </div>
-              {/* Name Field */}
-              <div className="mb-3 med-field">
-                <label htmlFor="name" className="form-label">{language === "fr" ? "Nom" : "Name"}</label>
-                <input
-                  id="name"
-                  type="text"
-                  className={`form-control ${errors.name ? 'is-invalid' : ''}`}
-                  {...register('name', { required: `${language === "fr" ? "Veuillez entrer votre nom" : "Please enter a name"}` })}
-                />
-                {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}
-              </div>
-            </div>
-            {/* Message Field */}
-            <div className="mb-3">
-              <label htmlFor="message" className="form-label">{language === "fr" ? "Message (facultatif)" : "Message (optional)"}</label>
-              <textarea
-                id="message"
-                rows={5}
-                className={`form-control ${errors.message ? 'is-invalid' : ''}`}
-                {...register('message')}
-              />
-              {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
-            </div>
-            <div className="mb-3">
-              <h4>{ language === "fr" ? "A noter que €150 seront ajoutés à votre facture pour participer aux frais de ménage de la maison entre les invités." : "Note that €150 will be added to your bill to contribute to the cost of cleaning the house between guests." }</h4>
-            </div>
-            {/* Submit Button */}
-            <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
-              {isSubmitting ? 
-                language === "fr" ? "Envoi en cours..." : "Sending..." :
-                language === "fr" ? "Demander une réservation" : "Request booking"
-              }
-            </button>
-            {errorMessage && <div className='error-message'>{errorMessage}</div>}
-          </form>
-        )}
+              <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
+                {isSubmitting ? "Updating..." : "Update week"}
+              </button>
+              {errorMessage && <div className='error-message'>{errorMessage}</div>}
+            </form>
+          )}
+        </div>}
       </div>
     </>
   );

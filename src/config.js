@@ -9,5 +9,6 @@ export let config = {
     location: 'Oléron Villa',
     tideURL: `https://zapphyqkan3dd6m6zdmpnnjrei0olqbg.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`,
     getWeeksURL: `https://3kfae6izgkgcfotbonpndsxabu0buefu.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`,
-    getBookingsURL: `https://yhddslklwa44u65uyxgde4hdcu0bnodu.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`
+    getBookingsURL: `https://yhddslklwa44u65uyxgde4hdcu0bnodu.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`,
+    updateBookingURL: `https://jenbcvq4j2saup4cjrqttr4u4m0eiyht.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`,
 }
