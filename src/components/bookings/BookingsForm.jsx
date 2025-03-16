@@ -59,7 +59,7 @@ export default function BookingsForm({weeks}) {
   };
 
   return (
-    <div className='space-above'>
+    <div className='space-above form-container'>
       {isSubmitSuccessful && !errorMessage ? (
         <h2 className="text-success">{language === "fr" ? "Votre message a été envoyé avec succèss!"
           : "Your message has been sent!"}</h2>
@@ -67,12 +67,12 @@ export default function BookingsForm({weeks}) {
         <form onSubmit={handleSubmit(onSubmit)} className="needs-validation" noValidate>
           <div className="responsive-form">
             {/* Email Field */}
-            <div className="med-field">
+            <div className="med-field medium-field">
               <label htmlFor="email" className="form-label">Email</label>
               <input
                 id="email"
                 type="email"
-                className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                className={`form-control ${errors.email ? 'is-invalid' : ''} centered-input`}
                 {...register('email', {
                   required: `${language === "fr" ? "Veuillez entrer une adresse email" : "Email address required"}`,
                   pattern: {
@@ -84,12 +84,12 @@ export default function BookingsForm({weeks}) {
               {errors.email && <div className="invalid-feedback">{errors.email.message}</div>}
             </div>
             {/* Optional Phone Number Field */}
-            <div className="mb-3 med-field">
-              <label htmlFor="phone" className="form-label">{language === "fr" ? "Numéro de téléphone (facultatif)" : "Phone number (optional)"}</label>
+            <div className="mb-3 med-field medium-field">
+              <label htmlFor="phone" className="form-label">{language === "fr" ? "Téléphone (facultatif)" : "Phone (optional)"}</label>
               <input
                 id="phone"
                 type="tel"
-                className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
+                className={`form-control ${errors.phone ? 'is-invalid' : ''} centered-input`}
                 {...register('phone', {
                   pattern: {
                     value: /^\+?[0-9]{7,15}$/,
@@ -100,12 +100,12 @@ export default function BookingsForm({weeks}) {
               {errors.phone && <div className="invalid-feedback">{errors.phone.message}</div>}
             </div>
             {/* Name Field */}
-            <div className="mb-3 med-field">
+            <div className="mb-3 med-field medium-field">
               <label htmlFor="name" className="form-label">{language === "fr" ? "Nom" : "Name"}</label>
               <input
                 id="name"
                 type="text"
-                className={`form-control ${errors.name ? 'is-invalid' : ''}`}
+                className={`form-control ${errors.name ? 'is-invalid' : ''} centered-input`}
                 {...register('name', { required: `${language === "fr" ? "Veuillez entrer votre nom" : "Please enter a name"}` })}
               />
               {errors.name && <div className="invalid-feedback">{errors.name.message}</div>}

@@ -486,6 +486,10 @@ div.bookings-info {
   margin-right: 50px;
 }
 
+.medium-field {
+  max-width: 300px;
+}
+
 .narrow-field {
   max-width: 150px; /* Adjust the width as needed */
 }
@@ -496,7 +500,7 @@ div.bookings-info {
 
 .centered-input {
   text-align: center;
-}
+} 
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
