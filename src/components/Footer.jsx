@@ -54,7 +54,7 @@ export default function Footer() {
 }, [language]);
 
   return (
-    <div className='responsive-grid footer-grid' id="footer">
+    <div className='responsive-grid footer-grid small-space-above' id="footer">
         <FooterContact/>
         {tideData && tideData.allTides && <Tide 
           tideData={tideData.allTides}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ImageModal from '../ImageModal';
 import InsideIntro from './InsideIntro';
 import InsideGrid from './InsideGrid';
+import BookNow from '../buttons/BookNow';
 
 export default function InsideContent() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -30,6 +31,7 @@ export default function InsideContent() {
       <InsideGrid
         action={imageClicked}
       />
+      <BookNow />
     </div>
   );
 }

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import HomeIntro from './/HomeIntro';
 import ImageModal from '../ImageModal';
 import HomeGrid from './HomeGrid';
+import BookNow from '../buttons/BookNow';
 
 export default function Home() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -30,6 +31,7 @@ export default function Home() {
       <HomeGrid
         action={imageClicked}
       />
+      <BookNow />
     </div>
   );
 }

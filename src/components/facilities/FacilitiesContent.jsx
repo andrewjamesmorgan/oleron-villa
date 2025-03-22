@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ImageModal from '../ImageModal';
 import FacilitiesGrid from './FacilitiesGrid';
 import FacilitiesIntro from './FacilitiesIntro';
+import BookNow from '../buttons/BookNow';
 
 export default function FacilitiesContent() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -30,6 +31,7 @@ export default function FacilitiesContent() {
       <FacilitiesGrid
         action={imageClicked}
       />
+      <BookNow />
     </div>
   );
 }

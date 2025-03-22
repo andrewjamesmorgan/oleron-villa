@@ -191,6 +191,10 @@ div.space-above {
   margin-top: 53px;
 }
 
+div.small-space-above {
+  margin-top: 20px;
+}
+
 div.error-message {
   border: 2px solid var(--error-color);
   background-color: var(--error-background);
@@ -491,11 +495,11 @@ div.bookings-info {
 }
 
 .narrow-field {
-  max-width: 150px; /* Adjust the width as needed */
+  max-width: 150px;
 }
 
 .very-narrow-field {
-  max-width: 80px; /* Adjust the width as needed */
+  max-width: 80px;
 }
 
 .centered-input {

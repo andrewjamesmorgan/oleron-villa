@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ImageModal from '../ImageModal';
 import OutsideGrid from './OutsideGrid';
 import OutsideIntro from './OutsideIntro';
+import BookNow from '../buttons/BookNow';
 
 export default function OutsideContent() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -30,6 +31,7 @@ export default function OutsideContent() {
       <OutsideGrid
         action={imageClicked}
       />
+      <BookNow />
     </div>
   );
 }

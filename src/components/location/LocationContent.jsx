@@ -1,5 +1,6 @@
 import LocationIntro from './LocationIntro';
 import LocationMap from './LocationMap';
+import BookNow from '../buttons/BookNow';
 
 export default function LocationContent() {
 
@@ -7,6 +8,7 @@ export default function LocationContent() {
     <div className='space-above'>
       <LocationIntro />
       <LocationMap />
+      <BookNow />
     </div>
   );
 }
