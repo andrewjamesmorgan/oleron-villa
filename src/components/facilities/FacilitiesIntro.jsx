@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import BookNow from '../buttons/BookNow';
 
 export default function FacilitiesIntro() {
   const { language } = useContext(UserContext);
@@ -21,6 +22,7 @@ export default function FacilitiesIntro() {
         { language === "fr" && <h2>Une maison très bien équipée avec tout ce dont vous aurez besoin</h2> }
         { language === "fr" && <p>Oléron Villa est une maison vaste et confortable, équipée avec tout le confort auquel vous pouvez vous attendre dans une maison de haut standing – matériel de cuisine, lave-vaisselle, lave-linge, mais aussi des vélos adulte, la télé câblée française et anglaise, ainsi qu'une connection internet haut-debit couvrant toute la maison.</p> }
       </div>
+      <BookNow />
     </>
   );
 }

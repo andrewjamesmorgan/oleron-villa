@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import BookNow from '../buttons/BookNow';
 
 export default function InsideIntro() {
   const { language } = useContext(UserContext);
@@ -28,6 +29,7 @@ export default function InsideIntro() {
         { language === "fr" && <p>La zone de vie principale est un grand salon moderne ouvert sur une cuisine aménagée, et équipé d'un home cinéma, 2 canapés, 2 fauteuils, et une grande table.</p> }
         { language === "fr" && <p>Pour plus d'informations, jetez un œil ci-dessous.</p> }
       </div>
+      <BookNow />
     </>
   );
 }

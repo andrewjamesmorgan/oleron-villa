@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import BookNow from '../buttons/BookNow';
 
 export default function OutsideIntro() {
   const { language } = useContext(UserContext);
@@ -24,6 +25,7 @@ export default function OutsideIntro() {
         { language === "fr" && <p>A l'arrière du jardin commence la forêt domaniale, et ses dizaines d'opportunités de promenade à pied, en vélo ou tout simplement, une route délicieuse vers la plage.</p>}
         { language === "fr" && <p>D'un point de vue pratique, il y a suffisamment de place pour garer plusieurs voitures, devant la maison, sur le côté ou dans le garage. Notre plus grand plaisir en arrivant est de laisser les clés de la voiture dans le tiroir et faire tous nos déplacements en vélo.</p>}
       </div>
+      <BookNow />
     </>
   );
 }
