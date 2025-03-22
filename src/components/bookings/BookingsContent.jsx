@@ -12,31 +12,6 @@ export default function BookingsContent() {
     localStorage.getItem("ol-password");
 
   async function fetchWeeks() {
-    // const username = localStorage.getItem("ol-username");
-    // const password = localStorage.getItem("ol-password");
-    // const isAdmin = username && password;
-    // const url = isAdmin ? config.getWeeksDetailsURL : config.getWeeksURL;
-    // if (isAdmin) {
-    //   const body = {
-    //     username,
-    //     password
-    //   };
-    //   try {
-    //     const response = await fetch(url, {
-    //       method: "POST",
-    //       body: JSON.stringify(body)
-    //     });
-    //     const data = await response.json();
-    //     if (response.status === 200) {
-    //       console.log("Fetched full weeks:", data);
-    //       return data.weeks ? data.weeks : []; // TODO
-    //     } else {
-    //       console.error(`Failed to fetch full weeks: ${data.message}`);
-    //     }
-    //   } catch (error) {
-    //     console.error(`Failed to fetch full weeks: ${error.message}`);
-    //   }
-    // }
     try {
       console.log(`Fetching weeks from ${config.getWeeksURL}`);
       const response = await fetch(config.getWeeksURL);
