@@ -27,7 +27,9 @@ export default function InfoBox({ imageSrc, alt, action, route, body }) {
         className={route ? "info-text" : "info-text-no-link"}
         onClick={openRoute}
       >
-        {body}
+        <div className='infobox-body'>
+          {body}
+        </div>
       </div>
     </div>
   );

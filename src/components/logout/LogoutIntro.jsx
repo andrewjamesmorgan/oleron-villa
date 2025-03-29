@@ -4,7 +4,7 @@ export default function LogoutIntro() {
       <div id='contact-intro' className='banner-image-text'>
         <h1>Owner loout</h1>
         <img
-          src="../../images/login/oleron-unlock-door.png"
+          src="../../images/login/oleron-unlock-door.jpg"
           alt="Prison guard about to unlock a cell using a large key"
           className='full-width-image'
         />
