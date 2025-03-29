@@ -20,7 +20,6 @@ export default function ContactIntro() {
         { language === "en" && <h2>Send us a message, and we'll get back to you as soon as we can.</h2> }
         { language === "fr" && <h2>Envoyez-nous un message et nous vous répondrons dans les plus brefs délais.</h2> }
       </div>
-      <BookNow />
     </>
   );
 }
