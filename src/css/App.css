@@ -411,6 +411,7 @@ span.temp-small {
 div.map {
   height: 1000px;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 a {
