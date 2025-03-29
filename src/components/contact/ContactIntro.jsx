@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { UserContext } from '../../App';
-import BookNow from '../buttons/BookNow';
 
 export default function ContactIntro() {
   const { language } = useContext(UserContext);
