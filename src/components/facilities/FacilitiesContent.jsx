@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ImageModal from '../ImageModal';
 import FacilitiesGrid from './FacilitiesGrid';
 import FacilitiesIntro from './FacilitiesIntro';
@@ -17,6 +17,19 @@ export default function FacilitiesContent() {
     setModalSrc(null);
     setModalAlt(null);
   }
+
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        dismisModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <div className='space-above'>
