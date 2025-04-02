@@ -10,7 +10,6 @@ export default function BathroomCell({action}) {
     <h3>Bathroom</h3>
     <p>All of the showers are of the Italian/walk-in style, no curtains or stuffy plastic boxes.</p>
     <p>The main family bathroom has a shower, basin a towel drier (as well a hairdryer). The main bedroom has an en-suite bathroom with shower, WC & basin. The guest bedroom has a shower and basin (as well as a WC next door). There are also 2 further WCs.</p>
-    <p>Note that our developers dubbed this the 'English house' because of the generous number of bathrroms!</p>
   </>);
   
   const frenchAlt = "Salle de bain avec double vasque et douche à l'italienne";
