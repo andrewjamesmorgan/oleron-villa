@@ -123,7 +123,7 @@ img.croppedImage {
   left: 0;
   width: 100%; /* Make the image fill the width of the container */
   height: 100%; /* Make the image fill the height of the container */
-  object-fit: cover; /* Ensures the image fills the frame, cropping if necessary */
+  object-fit: cover; 
 }
 
 img.croppedImage:hover {
