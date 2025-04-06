@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ImageModal from '../ImageModal';
 import OutsideGrid from './OutsideGrid';
 import OutsideIntro from './OutsideIntro';
+import BookNow from '../buttons/BookNow';
 
 export default function OutsideContent() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -17,6 +18,19 @@ export default function OutsideContent() {
     setModalAlt(null);
   }
 
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        dismisModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className='space-above'>
       <OutsideIntro />
@@ -30,6 +44,7 @@ export default function OutsideContent() {
       <OutsideGrid
         action={imageClicked}
       />
+      <BookNow />
     </div>
   );
 }

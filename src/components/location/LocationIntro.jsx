@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import BookNow from '../buttons/BookNow';
 
 export default function LocationIntro() {
   const { language } = useContext(UserContext);
@@ -21,6 +22,7 @@ export default function LocationIntro() {
         { language === "fr" && <h2>Où se trouve Oléron Villa</h2> }
         { language === "fr" && <p>Oléron Villa se situe sur l'île d'Oléron, côte Atlantique, reliée au continent par un pont (viaduc) gratuit.</p> }
       </div>
+      <BookNow />
     </>
   );
 }

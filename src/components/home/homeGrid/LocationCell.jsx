@@ -19,7 +19,7 @@ export default function LocationCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/location/oleron-map.png"
+        imageSrc="../../images/location/oleron-map.jpg"
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         route={language === "fr" ? "/location-fr" : "/location"}

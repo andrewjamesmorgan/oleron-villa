@@ -18,7 +18,7 @@ export default function GroundFloorCell({action}) {
 
   return (
     <InfoBox 
-        imageSrc="../../images/inside/oleron_ground_floor_plan.png"
+        imageSrc="../../images/inside/oleron_ground_floor_plan.jpg"
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         body={language === "fr" ? french : english}

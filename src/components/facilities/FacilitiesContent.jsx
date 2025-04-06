@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import ImageModal from '../ImageModal';
 import FacilitiesGrid from './FacilitiesGrid';
 import FacilitiesIntro from './FacilitiesIntro';
+import BookNow from '../buttons/BookNow';
 
 export default function FacilitiesContent() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -17,6 +18,19 @@ export default function FacilitiesContent() {
     setModalAlt(null);
   }
 
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        dismisModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className='space-above'>
       <FacilitiesIntro />
@@ -30,6 +44,7 @@ export default function FacilitiesContent() {
       <FacilitiesGrid
         action={imageClicked}
       />
+      <BookNow />
     </div>
   );
 }

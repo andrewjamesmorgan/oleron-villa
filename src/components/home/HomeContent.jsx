@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import HomeIntro from './/HomeIntro';
 import ImageModal from '../ImageModal';
 import HomeGrid from './HomeGrid';
+import BookNow from '../buttons/BookNow';
 
 export default function Home() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -16,6 +17,19 @@ export default function Home() {
     setModalSrc(null);
     setModalAlt(null);
   }
+
+  useEffect(() => {
+    function handleKeyDown(event) {
+      if (event.key === 'Escape') {
+        dismisModal();
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
   
   return (
     <div className='space-above'>
@@ -30,6 +44,7 @@ export default function Home() {
       <HomeGrid
         action={imageClicked}
       />
+      <BookNow />
     </div>
   );
 }

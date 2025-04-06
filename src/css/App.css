@@ -191,6 +191,10 @@ div.space-above {
   margin-top: 53px;
 }
 
+div.small-space-above {
+  margin-top: 20px;
+}
+
 div.error-message {
   border: 2px solid var(--error-color);
   background-color: var(--error-background);
@@ -407,6 +411,7 @@ span.temp-small {
 div.map {
   height: 1000px;
   width: 100%;
+  margin-bottom: 30px;
 }
 
 a {
@@ -491,16 +496,24 @@ div.bookings-info {
 }
 
 .narrow-field {
-  max-width: 150px; /* Adjust the width as needed */
+  max-width: 150px;
 }
 
 .very-narrow-field {
-  max-width: 80px; /* Adjust the width as needed */
+  max-width: 80px;
 }
 
 .centered-input {
   text-align: center;
 } 
+
+form.space-above {
+  margin-top: 20px;
+}
+
+div.infobox-body {
+  margin-top: 10px;
+}
 
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */

@@ -24,6 +24,7 @@ export default function AdminBookingsForm({ refresh }) {
   const [week, setWeek] = useState(null);
   const [start, setStart] = useState(null);
   const [end, setEnd] = useState(null);
+  const [isBooked, setIsBooked] = useState(false);
 
   function selectWeek(week) {
     setWeek(week);
@@ -125,6 +126,7 @@ export default function AdminBookingsForm({ refresh }) {
 
   useEffect(() => {
     if (week) {
+      setIsBooked(week.booked || false); // Initialize the checkbox state when the week changes
       setValue('booked', week.booked);
       setValue('notes', week.notes);
       setValue('price', week.price);
@@ -193,8 +195,11 @@ export default function AdminBookingsForm({ refresh }) {
                   id="booked"
                   className="form-check-input"
                   {...register('booked')}
-                  checked={!!week?.booked}
-                  onChange={(e) => setValue('booked', e.target.checked)}
+                  checked={isBooked} // Bind the checkbox to the state variable
+                  onChange={(e) => {
+                    setIsBooked(e.target.checked); // Update the state when the checkbox is clicked
+                    setValue('booked', e.target.checked); // Update the form value
+                  }}
                 />
               </div>
               <div className="mb-3 med-field narrow-field">

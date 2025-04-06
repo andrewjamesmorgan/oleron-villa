@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { UserContext } from '../../App';
+import BookNow from '../buttons/BookNow';
 
 export default function HomeIntro() {
   const { language } = useContext(UserContext);
@@ -29,6 +30,7 @@ export default function HomeIntro() {
             <p>La maison finie en 2012 a été aménagée avec soin afin d'apporter tous les conforts tant pour un séjour court que long. Vous trouverez le cadre de notre maison unique, avec beaucoup d'espace extérieur, des chambres confortables, mais surtout un accès à la plage par un sentier forestier merveilleux, sans une route à traverser, sans croiser une voiture.</p>
           </div>
         }
+        <BookNow />
       </div>
     </>
   );
