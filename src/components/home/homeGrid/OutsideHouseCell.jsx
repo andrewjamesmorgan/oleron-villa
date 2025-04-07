@@ -26,6 +26,8 @@ export default function OutsideHouseCell({action}) {
         action={action}
         route={language === "fr" ? "/outside_house-fr" : "/outside_house"}
         body={language === "fr" ? french : english}
+        centerX={70}
+        centerY={50}
     />
   );
 }

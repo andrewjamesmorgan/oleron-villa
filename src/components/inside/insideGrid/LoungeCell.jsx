@@ -25,6 +25,8 @@ export default function LoungeCell({action}) {
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         body={language === "fr" ? french : english}
+        centerX={70}
+        centerY={70}
     />
   );
 }

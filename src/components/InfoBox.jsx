@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import CroppedImage from './CroppedImage';
 
-export default function InfoBox({ imageSrc, alt, action, route, body }) {
+export default function InfoBox({ imageSrc, alt, action, route, body, centerX = 50, centerY = 50 }) {
   const navigate = useNavigate();
 
   function imageClicked() {
@@ -22,6 +22,8 @@ export default function InfoBox({ imageSrc, alt, action, route, body }) {
         imageSrc={imageSrc}
         alt={alt}
         action={imageClicked}
+        centerX = {centerX}
+        centerY = {centerY}
       />
       <div
         className={route ? "info-text" : "info-text-no-link"}

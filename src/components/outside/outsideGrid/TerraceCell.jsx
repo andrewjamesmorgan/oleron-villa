@@ -24,6 +24,8 @@ export default function TerraceCell({action}) {
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         body={language === "fr" ? french : english}
+        centerX={50}
+        centerY={70}
     />
   );
 }

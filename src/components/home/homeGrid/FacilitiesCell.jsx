@@ -25,6 +25,8 @@ export default function FacilitiesCell({action}) {
         action={action}
         route={language === "fr" ? "/facilities-fr" : "/facilities"}
         body={language === "fr" ? french : english}
+        centerX={60}
+        centerY={50}
     />
   );
 }

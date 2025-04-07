@@ -26,6 +26,8 @@ export default function InsideHouseCell({action}) {
         action={action}
         route={language === "fr" ? "/inside_house-fr" : "/inside_house"}
         body={language === "fr" ? french : english}
+        centerX={70}
+        centerY={70}
     />
   );
 }

@@ -24,6 +24,8 @@ export default function ContactCell({action}) {
         action={action}
         route={language === "fr" ? "/contact-fr" : "/contact"}
         body={language === "fr" ? french : english}
+        centerX={58}
+        centerY={50}
     /> 
   );
 }

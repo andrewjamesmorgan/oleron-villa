@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function CroppedImage({ imageSrc, alt, action, centerX = 50, centerY = 50 }) {
-  // Overrides any styles associated with the class
+  // Overrides just the specified attributes over the css styles associated with the class
   const cropStyle = {
     objectPosition: `${centerX}% ${centerY}%`
   };

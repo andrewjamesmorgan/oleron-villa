@@ -25,6 +25,8 @@ export default function MasterBedroomCell({action}) {
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         body={language === "fr" ? french : english}
+        centerX={0}
+        centerY={70}
     />
   );
 }

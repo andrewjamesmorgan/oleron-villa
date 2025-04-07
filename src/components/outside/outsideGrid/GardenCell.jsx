@@ -25,6 +25,8 @@ export default function GardenCell({action}) {
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         body={language === "fr" ? french : english}
+        centerX={30}
+        centerY={60}
     />
   );
 }
