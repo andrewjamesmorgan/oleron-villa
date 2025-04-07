@@ -23,6 +23,8 @@ export default function WifiCell({action}) {
         alt={language === "fr" ? frenchAlt : englishAlt}
         action={action}
         body={language === "fr" ? french : english}
+        centerX={40}
+        centerY={50}
     />
   );
 }

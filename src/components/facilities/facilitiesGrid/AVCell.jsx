@@ -31,6 +31,8 @@ export default function AVCell({ action }) {
       alt={language === "fr" ? frenchAlt : englishAlt}
       action={action}
       body={language === "fr" ? french : english}
+      centerX={60}
+      centerY={20}
     />
   );
 }
