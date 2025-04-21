@@ -515,6 +515,58 @@ div.infobox-body {
   margin-top: 10px;
 }
 
+div.reviews {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  gap: '16px'; 
+  display: flex;
+  justify-content: center;
+}
+
+div.review-info {
+  min-width: 300px;
+  max-width: 300px;
+}
+
+div.review-info p {
+  margin: 10px 0; /* Reduce vertical space between paragraphs */
+}
+
+.reviews-outer {
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.reviews-arrow {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 1;
+  margin: 0 8px;
+  transition: opacity 0.2s;
+}
+
+.reviews-arrow:disabled {
+  cursor: default;
+  opacity: 0.3;
+}
+
+.reviews {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-inner {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
@@ -541,6 +593,11 @@ div.infobox-body {
   .form-container {
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  div.reviews {
+    margin-top: 0px;
+    margin-bottom: 0px;
   }
 }
 

@@ -3,6 +3,7 @@ import HomeIntro from './/HomeIntro';
 import ImageModal from '../ImageModal';
 import HomeGrid from './HomeGrid';
 import BookNow from '../buttons/BookNow';
+import Reviews from '../Reviews';
 
 export default function Home() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -45,6 +46,7 @@ export default function Home() {
         action={imageClicked}
       />
       <BookNow />
+      <Reviews />
     </div>
   );
 }

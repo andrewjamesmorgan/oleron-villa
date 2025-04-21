@@ -11,4 +11,6 @@ export let config = {
     getWeeksURL: `https://3kfae6izgkgcfotbonpndsxabu0buefu.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`,
     getBookingsURL: `https://yhddslklwa44u65uyxgde4hdcu0bnodu.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`,
     updateBookingURL: `https://jenbcvq4j2saup4cjrqttr4u4m0eiyht.lambda-url.eu-west-1.on.aws?secret=${apiSecret}`,
+    getReviewsURL: `https://vww4shxj7hxr7qrccpnqcvyype0mmocp.lambda-url.eu-west-1.on.aws/?secret=${apiSecret}`,
+    addReviewURL: `https://vc53ent7j56hgd2ehjd4g77nga0eiqkq.lambda-url.eu-west-1.on.aws/?secret=${apiSecret}`,
 }
