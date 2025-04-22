@@ -19,6 +19,7 @@ import Location from './pages/Location';
 import LocationFR from './pages/LocationFR';
 import Login from './pages/Login';
 import Logout from './pages/Logout';
+import AddReview from './pages/AddReview';
 
 export const UserContext = createContext(null);
 
@@ -48,6 +49,7 @@ function App() {
             <Route path="facilities-fr" element={<FacilitiesFR />} />
             <Route path="location" element={<Location />} />
             <Route path="location-fr" element={<LocationFR />} />
+            <Route path="add_review" element={<AddReview />} />
             <Route path="login" element={<Login />} />
             <Route path="logout" element={<Logout />} />
             <Route path="*" element={<Home />} />

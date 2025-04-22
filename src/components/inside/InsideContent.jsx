@@ -3,6 +3,7 @@ import ImageModal from '../ImageModal';
 import InsideIntro from './InsideIntro';
 import InsideGrid from './InsideGrid';
 import BookNow from '../buttons/BookNow';
+import Reviews from '../Reviews';
 
 export default function InsideContent() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -45,6 +46,7 @@ export default function InsideContent() {
         action={imageClicked}
       />
       <BookNow />
+      <Reviews />
     </div>
   );
 }

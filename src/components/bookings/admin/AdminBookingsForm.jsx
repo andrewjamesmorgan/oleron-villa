@@ -102,8 +102,6 @@ export default function AdminBookingsForm({ refresh }) {
       booking: weekToStore
     });
 
-    console.log(`Submit`, json);
-
     try {
       const res = await fetch(config.updateBookingURL, {
         method: "POST",
@@ -222,10 +220,10 @@ export default function AdminBookingsForm({ refresh }) {
               <textarea
                 id="notes"
                 rows={5}
-                className={`form-control ${errors.message ? 'is-invalid' : ''}`}
+                className={`form-control ${errors.notes ? 'is-invalid' : ''}`}
                 {...register('notes')}
               />
-              {errors.message && <div className="invalid-feedback">{errors.message.message}</div>}
+              {errors.notes && <div className="invalid-feedback">{errors.notes.message}</div>}
             </div>
             <button type="submit" className="btn btn-primary btn-primary-branded" disabled={isSubmitting}>
               {isSubmitting ? "Updating..." : "Update week"}

@@ -1,6 +1,7 @@
 import LocationIntro from './LocationIntro';
 import LocationMap from './LocationMap';
 import BookNow from '../buttons/BookNow';
+import Reviews from '../Reviews';
 
 export default function LocationContent() {
 
@@ -9,6 +10,7 @@ export default function LocationContent() {
       <LocationIntro />
       <LocationMap />
       <BookNow />
+      <Reviews />
     </div>
   );
 }

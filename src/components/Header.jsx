@@ -53,6 +53,9 @@ export default function Header() {
           <Link to="/contact"
             onClick={hideBurgerMenu}
             className={pathName === "/contact" ? "active" : "not-active"}>Contact us</Link>
+          {isAdmin && <Link to="/add_review"
+            onClick={hideBurgerMenu}
+            className={pathName === "/add_review" ? "active" : "not-active"}>Add review</Link>}
           {isAdmin && <Link to="/logout"
             onClick={hideBurgerMenu}
             className={pathName === "/logout" ? "active" : "not-active"}>Log out</Link>}
@@ -84,7 +87,10 @@ export default function Header() {
           <Link to="/contact-fr"
             onClick={hideBurgerMenu}
             className={pathName === "/contact-fr" ? "active" : "not-active"}>Nous contacter</Link>
-          {isAdmin && <Link to="/logout"
+          {isAdmin && <Link to="/add_review"
+            onClick={hideBurgerMenu}
+            className={pathName === "/add_review" ? "active" : "not-active"}>Add review</Link>}
+          {isAdmin && <Link to="/add_review"
             onClick={hideBurgerMenu}
             className={pathName === "/login" ? "active" : "not-active"}>Log out</Link>}
           <LanguageButton buttonLanguage={"en"}/>

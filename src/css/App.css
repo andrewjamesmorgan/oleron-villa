@@ -567,6 +567,13 @@ div.review-info p {
   justify-content: center;
 }
 
+.my-invalid-feedback {
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: 0.875em;
+  color: #dc3545; /* Bootstrap's red for errors */
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   

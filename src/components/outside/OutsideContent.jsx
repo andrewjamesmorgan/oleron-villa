@@ -3,6 +3,7 @@ import ImageModal from '../ImageModal';
 import OutsideGrid from './OutsideGrid';
 import OutsideIntro from './OutsideIntro';
 import BookNow from '../buttons/BookNow';
+import Reviews from '../Reviews';
 
 export default function OutsideContent() {
   const [modalSrc, setModalSrc] = useState(null);
@@ -45,6 +46,7 @@ export default function OutsideContent() {
         action={imageClicked}
       />
       <BookNow />
+      <Reviews />
     </div>
   );
 }
