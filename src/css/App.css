@@ -606,5 +606,20 @@ div.review-info p {
     margin-top: 0px;
     margin-bottom: 0px;
   }
+
+  .reviews-outer {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .reviews-arrow {
+    margin: 0 0px;
+  }
 }
 
+@media only screen and (max-width: 400px) {
+  div.review-info {
+    min-width: 200px;
+    max-width: 200px;
+  }
+}
