@@ -96,9 +96,12 @@ export default function Header() {
           {isAdmin && <Link to="/add_review"
             onClick={hideBurgerMenu}
             className={pathName === "/add_review" ? "active" : "not-active"}>Add review</Link>}
-          {isAdmin && <Link to="/add_review"
+          {isTenant && <Link to="/stay-fr"
             onClick={hideBurgerMenu}
-            className={pathName === "/login" ? "active" : "not-active"}>Log out</Link>}
+            className={pathName === "/stay-fr" ? "active" : "not-active"}>Votre séjour</Link>}
+          {isAdmin && <Link to="/logout"
+            onClick={hideBurgerMenu}
+            className={pathName === "/logout" ? "active" : "not-active"}>Log out</Link>}
           <LanguageButton buttonLanguage={"en"}/>
           {/* eslint-disable-next-line */}
           <a href="#" className="icon" onClick={selectMenu}>
