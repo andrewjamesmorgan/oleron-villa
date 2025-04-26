@@ -11,7 +11,7 @@ export default function StayHeadFR() {
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
           name="description"
-          content="Découvrez les équipements de la villa Oléron, une maison de vacances entièrement équipée sur l'Île d'Oléron. Tout ce dont vous avez besoin pour un séjour confortable et agréable."
+          content="Votre séjour à la villa Oléron, une maison de vacances entièrement équipée sur l'Île d'Oléron. Tout ce dont vous avez besoin pour un séjour confortable et agréable."
         />
         <meta
           name="keywords"
@@ -20,17 +20,17 @@ export default function StayHeadFR() {
         <meta name="author" content="Andrew Morgan" />
         <meta name="robots" content="index, follow" />
 
-        <title>Équipements de la Villa Oléron - Location de vacances sur l'Île d'Oléron</title>
+        <title>Votre séjour - Location de vacances sur l'Île d'Oléron</title>
 
         <link rel="stylesheet" href="styles.css" /> {/* Remplacez par le chemin de votre fichier CSS */}
         <link rel="icon" href="favicon.ico" type="image/x-icon" /> {/* Remplacez par le chemin de votre favicon */}
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Équipements de la Villa Oléron - Location de vacances sur l'Île d'Oléron" />
+        <meta property="og:title" content="Votre séjour - Location de vacances sur l'Île d'Oléron" />
         <meta
           property="og:description"
-          content="Découvrez les équipements de la villa Oléron, comprenant une cuisine entièrement équipée, une grande salle à manger, des espaces extérieurs, internet, et bien plus encore."
+          content="Votre séjour, comprenant une cuisine entièrement équipée, une grande salle à manger, des espaces extérieurs, internet, et bien plus encore."
         />
         <meta property="og:image" content="https://oleronvilla.com/images/Oleron_Villa_OG.jpg" />
         <meta property="og:url" content="https://oleronvilla.com/#/stay-fr" /> {/* Remplacez par l'URL de votre site */}
@@ -38,10 +38,10 @@ export default function StayHeadFR() {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Équipements de la Villa Oléron - Location de vacances sur l'Île d'Oléron" />
+        <meta name="twitter:title" content="Votre séjour - Location de vacances sur l'Île d'Oléron" />
         <meta
           name="twitter:description"
-          content="Découvrez les équipements de la villa Oléron, comprenant une cuisine entièrement équipée, une grande salle à manger, des espaces extérieurs, internet, et bien plus encore."
+          content="Votre séjour, comprenant une cuisine entièrement équipée, une grande salle à manger, des espaces extérieurs, internet, et bien plus encore."
         />
       </Helmet>
     </>
