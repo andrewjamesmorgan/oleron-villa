@@ -425,6 +425,10 @@ a:hover {
   color: var(--light-highlight); 
 }
 
+a.no-colour {
+  color: inherit;
+}
+
 .tide-times {
   text-align: left !important;
   max-width: 240px !important;
