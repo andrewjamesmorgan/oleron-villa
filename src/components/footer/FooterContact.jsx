@@ -1,9 +1,9 @@
-// import { useContext } from 'react';
-// import { UserContext } from '../../App';
+import { useContext } from 'react';
+import { UserContext } from '../../App';
 import AwesomeButton from '../buttons/AwesomeButton';
 
 export default function FooterContact() {
-  // const { language } = useContext(UserContext);
+  const { language } = useContext(UserContext);
 
   return (
     <div className="footer-column" id="footer-contact">
@@ -21,6 +21,7 @@ export default function FooterContact() {
           label="+44-7899984259" 
           icon="fa-phone" 
           url="tel:+447899984259"/>
+        <p className='registration-number'>{language === "fr" ? "Numéro d'enregistrement" : "Registration number"}: 1748500015167</p>
       </div>
     </div>
   );

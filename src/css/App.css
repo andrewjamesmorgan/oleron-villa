@@ -578,6 +578,10 @@ div.review-info p {
   color: #dc3545; /* Bootstrap's red for errors */
 }
 
+.registration-number {
+  text-align: left;
+}
+
 @media only screen and (max-width: 620px) {
   /* For mobile phones: */
   
