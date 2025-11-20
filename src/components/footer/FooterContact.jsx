@@ -21,7 +21,7 @@ export default function FooterContact() {
           label="+44-7899984259" 
           icon="fa-phone" 
           url="tel:+447899984259"/>
-        <p className='registration-number'>{language === "fr" ? "Numéro d'enregistrement" : "Registration number"}: 1748500015167</p>
+        <p className='registration-number'>{language === "fr" ? "Numéro d'enregistrement" : "Registration number"}: 174850358832</p>
       </div>
     </div>
   );
