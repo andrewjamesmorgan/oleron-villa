@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { config } from '../../config';
 import Year from "./Year";
 import BookingsIntro from "./BookingsIntro";
@@ -10,6 +10,26 @@ export default function BookingsContent() {
   const [calendarData, setCalendarData] = useState([]);
   const isAdmin = localStorage.getItem("ol-username") && 
     localStorage.getItem("ol-password");
+
+  const visibleCalendarData = useMemo(() => {
+    if (isAdmin) return calendarData;
+
+    const now = new Date();
+    const startOfPreviousMonth = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+
+    return (calendarData || [])
+      .map((year) => {
+        const months = (year.months || []).filter((month) => {
+          const firstWeekStart = month?.bookings?.[0]?.start;
+          if (!firstWeekStart) return false;
+          const monthStartDate = new Date(firstWeekStart);
+          return monthStartDate >= startOfPreviousMonth;
+        });
+
+        return { ...year, months };
+      })
+      .filter((year) => (year.months || []).length > 0);
+  }, [calendarData, isAdmin]);
 
   async function fetchWeeks() {
     try {
@@ -46,7 +66,7 @@ export default function BookingsContent() {
   return (
     <div className='space-above'>
       <BookingsIntro />
-      {calendarData.map((year) => (
+      {visibleCalendarData.map((year) => (
         <Year
           key={`year-${year.year}`} 
           year={year} 
